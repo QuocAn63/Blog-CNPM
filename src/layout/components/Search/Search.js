@@ -96,7 +96,7 @@ function Search() {
    const [searchResult, setSearchResult] = useState([]);
    const [searchValue, setSearchValue] = useState('');
    const [showResult, setShowResult] = useState(false);
-   const [loading, setLoading] = useState(false);
+   const [loading, setLoading] = useState(true);
    const navigate = useNavigate();
    // const debouncedValue = useDebounce(searchValue);
    const searchInputRef = useRef();
@@ -125,22 +125,20 @@ function Search() {
    return (
       <div className="h-16 flex items-center">
          <HeadlessTippy
-            visible={true}
+            visible={showResult && searchResult.length > 0}
             interactive
-            offset={[0, 0]}
+            offset={[0, 1]}
             onClickOutside={() => setShowResult(false)}
             render={(attrs) => (
-               <div tabIndex="-1" className="bg-white rounded shadow-md overflow-auto w-96 min-h-[600px] max-h-[90vh]">
-                  {
-                     searchResult.map((result, index) => (
-                        <div key={index}>
-                           <p className="">{result.TITLE}</p>
-                           {result.DATA.map((item, index) => (
-                              <ResultItem data={item} type={result.TYPE} key={index} />
-                           ))}
-                        </div>
-                     ))
-                  }
+               <div tabIndex="-1" className="bg-white rounded shadow-md overflow-auto w-96 min-h-[500px] max-h-[80vh]">
+                  {searchResult.map((result, index) => (
+                     <div key={index}>
+                        <p className="px-4 py-2 text-base font-bold uppercase text-white bg-sky-700">{result.TITLE}</p>
+                        {result.DATA.map((item, index) => (
+                           <ResultItem data={item} type={result.TYPE} key={index} />
+                        ))}
+                     </div>
+                  ))}
                </div>
             )}
          >
@@ -164,7 +162,7 @@ function Search() {
                </div>
                <button
                   type="button"
-                  className="absolute w-10 h-10 top-1/2 -right-px -translate-y-1/2 rounded-tr rounded-br border border-slate-400 outline-none text-white text-base bg-sky-800"
+                  className="absolute w-10 h-10 top-1/2 -right-px -translate-y-1/2 rounded-tr rounded-br border border-slate-400 outline-none text-white text-base bg-sky-700"
                   onClick={handleSearch}
                >
                   {<FontAwesomeIcon icon={faMagnifyingGlass} />}

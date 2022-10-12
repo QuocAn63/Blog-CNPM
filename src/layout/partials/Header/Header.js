@@ -12,7 +12,7 @@ function Header() {
                   <NavLink
                      key={index}
                      to={item.path}
-                     className={(nav) => (nav.isActive ? 'p-4 font-bold text-sky-800' : 'p-4 font-bold text-slate-400')}
+                     className={(nav) => (nav.isActive ? 'p-4 font-bold text-sky-700' : 'p-4 font-bold text-slate-400')}
                   >
                      {item.title}
                   </NavLink>

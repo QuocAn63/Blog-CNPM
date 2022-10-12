@@ -2,7 +2,6 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import config from '~/config';
 import Search from '~/layout/components/Search';
-import HeadlessTippy from '@tippyjs/react/headless';
 
 function Header() {
    return (

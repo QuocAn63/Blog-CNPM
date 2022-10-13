@@ -142,7 +142,7 @@ function Search() {
                </div>
             )}
          >
-            <div className="relative flex items-center w-96 h-10 pl-5 border border-slate-400 rounded">
+            <div className="relative flex items-center w-96 h-10 pl-5 border border-slate-300 rounded focus-within:border-sky-700">
                <input
                   type="text"
                   placeholder="Tìm kiếm bài viết"
@@ -162,7 +162,7 @@ function Search() {
                </div>
                <button
                   type="button"
-                  className="absolute w-10 h-10 top-1/2 -right-px -translate-y-1/2 rounded-tr rounded-br border border-slate-400 outline-none text-white text-base bg-sky-700"
+                  className="absolute w-10 h-10 top-1/2 -right-px -translate-y-1/2 rounded-tr rounded-br border border-sky-700 outline-none text-white text-base bg-sky-700"
                   onClick={handleSearch}
                >
                   {<FontAwesomeIcon icon={faMagnifyingGlass} />}

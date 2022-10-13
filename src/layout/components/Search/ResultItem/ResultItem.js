@@ -1,4 +1,4 @@
-import React from 'react';
+import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom';
 
 import Image from '~/components/Image';
@@ -63,6 +63,10 @@ function ResultItem({ data, type }) {
    }
 
    return <Comp data={data} />;
+}
+
+ResultItem.propTypes = {
+   data: PropTypes.object.isRequired,
 }
 
 export default ResultItem;

@@ -1,4 +1,4 @@
-const NavigationItems = [
+const GlobalNavList = [
    {
       title: 'Trang chủ',
       path: '/',
@@ -17,4 +17,19 @@ const NavigationItems = [
    },
 ];
 
-export { NavigationItems } 
+const ArticleNavList = [
+   {
+      name: 'Đang theo dõi',
+      path: '/followings',
+   },
+   {
+      name: 'Mới nhất',
+      path: '/newest',
+   },
+   {
+      name: 'Bookmarks của tôi',
+      path: '/bookmarks',
+   },
+];
+
+export { GlobalNavList, ArticleNavList };

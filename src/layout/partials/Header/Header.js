@@ -20,7 +20,7 @@ import Image from '~/components/Image';
 import 'tippy.js/dist/tippy.css';
 import AccountMenu from '~/components/AccountMenu';
 
-import FakeData from '~/FakeData'
+import FakeData from '~/FakeData';
 
 function Header() {
    const [notifies, setNotifies] = useState(FakeData.Notify);
@@ -50,7 +50,7 @@ function Header() {
       <div className="fixed top-0 left-0 right-0 flex items-center justify-center h-16 bg-white z-50 shadow-lg">
          <div className="flex items-center justify-between max-w-screen-xl w-full">
             <div>
-               {config.itemList.NavigationItems.map((item, index) => (
+               {config.itemList.GlobalNavList.map((item, index) => (
                   <NavLink
                      key={index}
                      to={item.path}
@@ -116,7 +116,7 @@ function Header() {
                                  title="Đăng xuất"
                                  icon={faArrowRightFromBracket}
                                  horizontal
-                              // onClick={handleLogout}
+                                 // onClick={handleLogout}
                               />
                            </div>
                         )}

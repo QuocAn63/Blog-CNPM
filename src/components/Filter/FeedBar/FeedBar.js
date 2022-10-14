@@ -4,7 +4,7 @@ import { Link, NavLink } from 'react-router-dom';
 import styles from './FeedBar.module.scss';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Button from '~/components/Image/Button';
+import Button from '~/components/Button';
 
 const cx = classNames.bind(styles);
 

@@ -12,19 +12,19 @@ function Footer() {
             <p className="font-bold uppercase pb-4">Tài nguyên</p>
             <ul className="flex w-full flex-wrap">
               <li className="basis-1/2 mb-4">
-                <Link to="/posts" className="block">Bài viết</Link>
+                <Link to="/posts" className="block text-white">Bài viết</Link>
               </li>
               <li className="basis-1/2 mb-4">
-                <Link to="/questions" className="block">Câu hỏi</Link>
+                <Link to="/questions" className="block text-white">Câu hỏi</Link>
               </li>
               <li className="basis-1/2 mb-4">
-                <Link to="/discussions" className="block">Thảo luận</Link>
+                <Link to="/discussions" className="block text-white">Thảo luận</Link>
               </li>
               <li className="basis-1/2 mb-4">
-                <Link to="/tags" className="block">Tags</Link>
+                <Link to="/tags" className="block text-white">Tags</Link>
               </li>
               <li className="basis-1/2 mb-4">
-                <Link to="/authors" className="block">Tác giả</Link>
+                <Link to="/authors" className="block text-white">Tác giả</Link>
               </li>
             </ul>
           </div>
@@ -32,12 +32,12 @@ function Footer() {
             <p className="font-bold uppercase pb-4">Liên kết</p>
             <ul className="flex w-full flex-wrap gap-8">
               <li>
-                <a href="https://www.facebook.com/quocan.6302" target="_blank" className="block text-lg" rel="noreferrer">
+                <a href="https://www.facebook.com/quocan.6302" target="_blank" className="block text-white text-lg" rel="noreferrer">
                   <FontAwesomeIcon icon={faFacebookF} />
                 </a>
               </li>
               <li>
-                <a href="https://github.com/QuocAn63" target="_blank" className="block text-lg" rel="noreferrer">
+                <a href="https://github.com/QuocAn63" target="_blank" className="block text-white text-lg" rel="noreferrer">
                   <FontAwesomeIcon icon={faGithub} />
                 </a>
               </li>

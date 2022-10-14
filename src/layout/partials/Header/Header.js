@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
-import Button from '~/components/Image/Button';
+import Button from '~/components/Button';
 import config from '~/config';
 import Search from '~/layout/components/Search';
 import HeadlessTippy from '@tippyjs/react/';
@@ -116,7 +116,7 @@ function Header() {
                                  title="Đăng xuất"
                                  icon={faArrowRightFromBracket}
                                  horizontal
-                                 // onClick={handleLogout}
+                              // onClick={handleLogout}
                               />
                            </div>
                         )}

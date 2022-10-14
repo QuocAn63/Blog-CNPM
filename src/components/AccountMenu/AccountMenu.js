@@ -18,8 +18,8 @@ function AccountMenu({ title, icon, to, onClick, horizontal = false, ...passProp
    return (
       <Comp
          className={
-            'flex items-center w-full gap-3 px-3 py-2 cursor-pointer hover:bg-slate-200' +
-            (horizontal ? ' border-top border-slate-200' : null)
+            'flex items-center w-full gap-3 px-3 py-2 cursor-pointer hover:bg-gray-200' +
+            (horizontal ? ' border-t border-slate-200' : "")
          }
          {...props}
       >

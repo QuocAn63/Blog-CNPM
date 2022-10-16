@@ -1,6 +1,7 @@
 import React from 'react';
 import Banner from '~/components/Banner/Banner';
 import PostContainer from '~/components/PostContainer';
+import StickySidebar from '~/components/StickySidebar';
 
 function Home() {
    return (
@@ -13,7 +14,7 @@ function Home() {
                   <PostContainer />
                </div>
                <div className="col-span-3">
-                  <div className="border border-slate-200 rounded shadow h-10"></div>
+                  <StickySidebar />
                </div>
             </div>
          </div>

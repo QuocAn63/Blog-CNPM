@@ -15,7 +15,7 @@ function Banner({ src, href, to, alt, className }) {
    const props = { href, to, className };
 
    return (
-      <div className="py-5">
+      <div className="pt-5 pb-10">
          <div className="max-w-screen-xl m-auto">
             <Comp props={props}>
                <Image src={src} alt={alt} className={className + ' min-h-[100px] max-h-[200px] object-cover'} />

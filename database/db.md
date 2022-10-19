@@ -8,13 +8,12 @@
    - User Meta Data - userMeta
 2. Post:
    - Post - post
-   - Post Meta Data - postMeta
 3. Question:
    - Question - question
-   - Question Meta Data - questionMeta
 4. Comment:
    - Comment - comment
-
+5. Tag:
+   - Tag - tag
 ## III. Schema Design:
 
 1. User ( Author ) - user
@@ -46,13 +45,13 @@ user: {
     },
     role: [{
         type: String,
-        enum: ['user', 'admin']
+        enum: ['user', 'mod', 'admin']
     }],
     timeStamp : true
 }
 ```
 
-2. User Informations - userDetail
+2. User Detail - userDetail
 ``` javascript
 userDetail: {
     _id: {
@@ -75,6 +74,10 @@ userDetail: {
     dateOfBirth: {
         type: Date,
         required: true
+    },
+    gender: {
+        type: String,
+        enum: ['male', 'female', 'other']
     }
 }
 ```
@@ -116,7 +119,7 @@ post: {
     _id: {
         type: ObjectId
     },
-    author: [{
+    user: [{
         type: ObjectId,
         ref: user
     }],
@@ -130,28 +133,10 @@ post: {
         minLength: 255,
         required: true
     },
-    publishedAt: {
-        type: Date,
-        default: timeStamp
-    },
-    status: {
-        type: String,
-        enum: ['available', 'hidden', 'deleted']
-    }
-    timeStamp : true
-}
-```
-
-4. Post Meta Data - postMeta
-``` javascript
-postMeta: {
-    _id: {
-        type: ObjectId
-    },
-    postId: {
+    tags: [{
         type: ObjectId,
-        ref: post
-    },
+        ref: tag
+    }],
     upvote: [{
         type: ObjectId,
         ref: user
@@ -164,6 +149,123 @@ postMeta: {
     comments: [{
         type: ObjectId,
         ref: comment
-    }]
+    }],
+    publishedAt: {
+        type: Date,
+        default: timeStamp
+    },
+    status: {
+        type: String,
+        enum: ['available', 'hidden', 'deleted']
+    }
+    timeStamp : true
+}
+```
+
+5. Question - question
+``` javascript
+question: {
+    _id: {
+        type: ObjectId
+    },
+    user: [{
+        type: ObjectId,
+        ref: user
+    }],
+    title: {
+        type: String,
+        minLength: 10,
+        maxLength: 155,
+        required: true
+    },
+    content: {
+        minLength: 255,
+        required: true
+    },
+    tags: [{
+        type: ObjectId,
+        ref: tag
+    }],
+    upvote: [{
+        type: ObjectId,
+        ref: user
+    }],
+    downvote: [{
+        type: ObjectId,
+        ref: user
+    }],
+    ,
+    comments: [{
+        type: ObjectId,
+        ref: comment
+    }],
+    solveld: {
+        type: Boolean,
+        default: false
+    }
+    publishedAt: {
+        type: Date,
+        default: timeStamp
+    },
+    status: {
+        type: String,
+        enum: ['available', 'hidden', 'deleted']
+    }
+    timeStamp : true
+}
+```
+
+6. Comment - comment
+``` javascript 
+comment: {
+    _id: {
+        type: ObjectId,
+    },
+    user: {
+        type: ObjectId,
+        ref: user
+    },
+    content: {
+        type: String,
+        minLength: 1,
+        required: true
+    },
+    // add when comment is a reply
+    parentId: {
+        type: ObjectId,
+        ref: comment,
+        default: null
+    },
+    comments: [{
+        type: ObjectId,
+        ref: comment
+    }],
+    // add when comment is a question reply
+    accepted: {
+        type: Boolean,
+        default: false
+    },
+    timeStamp: true 
+}
+```
+
+7. Tag - tag
+``` javascript 
+tag: {
+    _id: {
+        type: ObjectId,
+    },
+    title: {
+        type: String,
+        minLength: 3,
+        maxLength: 20,
+        required: true
+    },
+    slug: {
+        type: String,
+        minLength: 3,
+        required: true
+    },
+    timeStamp: true 
 }
 ```

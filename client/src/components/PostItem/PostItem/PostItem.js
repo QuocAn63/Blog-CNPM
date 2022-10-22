@@ -3,9 +3,9 @@ import styles from './PostItem.module.scss';
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
 
-import Image from '../Image';
-import Tag from '../Tag';
-import MetaItem from '../MetaItem';
+import Image from '~/components/Image';
+import Tag from '~/components/Tag';
+import MetaItem from '~/components/MetaItem';
 
 const cx = classNames.bind(styles);
 

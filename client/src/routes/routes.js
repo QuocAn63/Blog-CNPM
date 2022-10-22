@@ -2,23 +2,29 @@ import config from '~/config';
 
 // Pages
 import Home from '~/pages/Home';
+import Posts from '~/pages/Posts';
 
 const publicRoutes = [
    {
       path: config.routes.home,
       component: Home,
+      exact: true
+   },
+   {
+      path: config.routes.posts,
+      component: Posts,
       subPath: [
          {
-            component: Home,
             path: 'followings',
+            component: Posts,
          },
          {
-            component: Home,
             path: 'newest',
+            component: Posts,
          },
          {
-            component: Home,
             path: 'bookmarks',
+            component: Posts,
          },
       ],
    },

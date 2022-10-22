@@ -1,7 +1,10 @@
+import { faPen } from '@fortawesome/free-solid-svg-icons';
+
 const GlobalNavList = [
    {
       title: 'Trang chủ',
       path: '/',
+      end: true,
    },
    {
       title: 'Bài viết',
@@ -17,19 +20,25 @@ const GlobalNavList = [
    },
 ];
 
-const ArticleNavList = [
-   {
-      name: 'Đang theo dõi',
-      path: '/followings',
-   },
-   {
-      name: 'Mới nhất',
-      path: '/newest',
-   },
-   {
-      name: 'Bookmarks của tôi',
-      path: '/bookmarks',
-   },
-];
+const PostsNavList = {
+   list: [
+      {
+         name: 'Đang theo dõi',
+         path: 'followings',
+         exact: true,
+      },
+      {
+         name: 'Mới nhất',
+         path: 'newest',
+      },
+      {
+         name: 'Bookmarks của tôi',
+         path: 'bookmarks',
+      },
+   ],
+   title: 'Viết bài',
+   icon: faPen,
+   path: '/publish/post',
+};
 
-export { GlobalNavList, ArticleNavList };
+export { GlobalNavList, PostsNavList };

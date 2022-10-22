@@ -54,6 +54,7 @@ function Header() {
                   <NavLink
                      key={index}
                      to={item.path}
+                     end={item.end}
                      className={(nav) => (nav.isActive ? 'p-4 font-bold text-sky-700' : 'p-4 font-bold text-slate-400')}
                   >
                      {item.title}
@@ -116,7 +117,7 @@ function Header() {
                                  title="Đăng xuất"
                                  icon={faArrowRightFromBracket}
                                  horizontal
-                              // onClick={handleLogout}
+                                 // onClick={handleLogout}
                               />
                            </div>
                         )}

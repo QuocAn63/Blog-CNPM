@@ -1,9 +1,8 @@
 import PropTypes from 'prop-types';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import styles from './FeedBar.module.scss';
 import classNames from 'classnames/bind';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from '~/components/Button';
 
 const cx = classNames.bind(styles);
@@ -41,5 +40,12 @@ function Feedbar({ list, path, icon, title }) {
       </div>
    );
 }
+
+Feedbar.propTypes = {
+   list: PropTypes.array.isRequired,
+   path: PropTypes.string,
+   icon: PropTypes.object,
+   title: PropTypes.string,
+};
 
 export default Feedbar;

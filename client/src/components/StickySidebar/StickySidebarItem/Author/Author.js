@@ -49,7 +49,7 @@ function AuthorSidebarItem({ data }) {
                </p>
             </div>
          </div>
-         <div class="flex items-center gap-5 my-2">
+         <div className="flex items-center gap-5 my-2">
             {meta.map((item, index) => (
                <MetaItem key={index} title={item.title} content={item.value} />
             ))}

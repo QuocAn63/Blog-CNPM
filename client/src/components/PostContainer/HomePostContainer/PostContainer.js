@@ -2,14 +2,14 @@ import PropTypes from 'prop-types';
 
 import styles from './PostContainer.module.scss';
 import classNames from 'classnames/bind';
-import PostItem from '../PostItem';
+import PostItem from '../../PostItem/PostItem';
 import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
 const fakeData = [{}];
 
-function PostContainer({ data }) {
+function HomePostContainer({ data }) {
    return (
       <div className={cx('container') + ' bg-white border border-slate-200 shadow rounded py-5'}>
          <Link
@@ -32,4 +32,4 @@ function PostContainer({ data }) {
    );
 }
 
-export default PostContainer;
+export default HomePostContainer;

@@ -44,7 +44,6 @@ const Item = forwardRef(({ content, icon, onClick, className }, ref) => {
 function MetaItem({ title, content, icon, className, onClick, ...passprops }) {
    icon = metaInformations[title].icon;
    title = metaInformations[title].title;
-   console.log(icon);
    return title !== undefined ? (
       <Tippy content={title} placement="bottom">
          <Item content={content} icon={icon} onClick={onClick} className={className} />

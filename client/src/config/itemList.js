@@ -32,6 +32,10 @@ const PostsNavList = {
          path: 'newest',
       },
       {
+         name: 'Đánh giá cao',
+         path: 'ratings',
+      },
+      {
          name: 'Bookmarks của tôi',
          path: 'bookmarks',
       },

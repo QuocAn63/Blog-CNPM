@@ -5,6 +5,9 @@ import StickySidebar from '~/components/StickySidebar';
 import config from '~/config';
 import { PostItem } from '~/components/PostItem';
 import { PostContainer } from '~/components/PostContainer';
+
+import FakeData from '~/FakeData';
+
 function Posts() {
    return (
       <div>
@@ -14,7 +17,7 @@ function Posts() {
             <div className="max-w-screen-xl mx-auto">
                <div className="grid grid-cols-12">
                   <div className="col-span-9 pr-5">
-                     <PostContainer list={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]} Component={PostItem} />
+                     <PostContainer list={FakeData.Posts.data} Component={PostItem} />
                   </div>
                   <div className="col-span-3">
                      <StickySidebar />

@@ -12,8 +12,8 @@ function Home() {
          <div className="max-w-screen-xl mx-auto">
             <div className="grid grid-cols-12">
                <div className="col-span-9 pr-5">
-                  <HomePostContainer list={FakeData.Posts.data} title="Bài viết mới nhất" Component={PostItem} />
-                  <HomePostContainer list={FakeData.Posts.data} title="Câu hỏi mới nhất" Component={QuestionItem} />
+                  <HomePostContainer list={FakeData.Posts.posts} title="Bài viết mới nhất" Component={PostItem} />
+                  <HomePostContainer list={FakeData.Posts.posts} title="Câu hỏi mới nhất" Component={QuestionItem} />
                </div>
                <div className="col-span-3">
                   <StickySidebar />

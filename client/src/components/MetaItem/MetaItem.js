@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+<<<<<<< HEAD
 import {
    faBookmark,
    faCalendar,
@@ -11,6 +12,9 @@ import {
    faReply,
    faUserPlus,
 } from '@fortawesome/free-solid-svg-icons';
+=======
+import { faBookmark, faCalendar, faCaretUp, faComment, faPen, faReply, faUserPlus } from '@fortawesome/free-solid-svg-icons';
+>>>>>>> a8e4816e10e25fbefffa99dcfbc637506a2de8b1
 import { forwardRef, memo } from 'react';
 
 const metaInformations = {
@@ -38,10 +42,17 @@ const metaInformations = {
       title: 'Bài viết',
       icon: faPen,
    },
+<<<<<<< HEAD
    publishedAt: {
       title: 'Thời gian xuất bản',
       icon: faCalendar,
    },
+=======
+   time: {
+      title: "Thời gian xuất bản",
+      icon: faCalendar
+   }
+>>>>>>> a8e4816e10e25fbefffa99dcfbc637506a2de8b1
 };
 
 const Item = forwardRef(({ content, icon, onClick, className }, ref) => {

@@ -1,42 +1,65 @@
 import config from '~/config';
-import Discussions from '~/pages/Discussions';
 
 // Pages
-import Home from '~/pages/Home';
-import Post from '~/pages/Post';
-import Posts from '~/pages/Posts';
+import HomePage from '~/pages/Home';
+import PostsPage from '~/pages/Posts';
+import QuestionsPage from '~/pages/Questions';
+import DiscussionsPage from '~/pages/Discussions';
+import PostPage from '~/pages/Post';
 
 const publicRoutes = [
    {
       path: config.routes.home,
-      component: Home,
+      component: HomePage,
       exact: true,
    },
    {
       path: config.routes.posts,
-      component: Posts,
+      component: PostsPage,
       subPath: [
          {
             path: 'followings',
-            component: Posts,
+            component: PostsPage,
          },
          {
             path: 'newest',
-            component: Posts,
+            component: PostsPage,
          },
          {
             path: 'bookmarks',
-            component: Posts,
+            component: PostsPage,
+         },
+      ],
+   },
+   {
+      path: config.routes.questions,
+      component: QuestionsPage,
+      subPath: [
+         {
+            path: 'unsolved',
+            component: QuestionsPage,
+         },
+         {
+            path: 'newest',
+            component: QuestionsPage,
+         },
+         {
+            path: 'bookmarks',
+            component: QuestionsPage,
+         },
+         {
+            path: 'followings',
+            component: QuestionsPage,
          },
       ],
    },
    {
       path: config.routes.discussions,
-      component: Discussions,
+      component: DiscussionsPage,
    },
    {
       path: config.routes.post,
-      component: Post,
+      component: PostPage,
    },
 ];
 

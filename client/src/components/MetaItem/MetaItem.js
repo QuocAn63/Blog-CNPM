@@ -2,7 +2,15 @@ import PropTypes from 'prop-types';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBookmark, faCaretUp, faComment, faPen, faReply, faUserPlus } from '@fortawesome/free-solid-svg-icons';
+import {
+   faBookmark,
+   faCalendar,
+   faCaretUp,
+   faComment,
+   faPen,
+   faReply,
+   faUserPlus,
+} from '@fortawesome/free-solid-svg-icons';
 import { forwardRef, memo } from 'react';
 
 const metaInformations = {
@@ -29,6 +37,10 @@ const metaInformations = {
    posts: {
       title: 'Bài viết',
       icon: faPen,
+   },
+   publishedAt: {
+      title: 'Thời gian xuất bản',
+      icon: faCalendar,
    },
 };
 

@@ -30,7 +30,7 @@ function PostItem(props) {
                   <span className="ml-2 text-slate-500 text-sm">{publishedAt}</span>
                </div>
                <div className="flex items-center gap-4 flex-wrap">
-                  <Link to={slug} className="block text-lg font-medium shrink-0 hover:text-sky-600">
+                  <Link to={'/post/' + slug} className="block text-lg font-medium shrink-0 hover:text-sky-600">
                      {title}
                   </Link>
                   <div className="flex items-center gap-2">

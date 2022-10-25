@@ -1,4 +1,4 @@
-export const data = [
+export const posts = [
    {
       slug: '1-bai-blog-mau',
       title: 'Cách tạo 1 bài blog',
@@ -20,6 +20,7 @@ export const data = [
             questions_count: 0,
          },
       },
+      isSolved: true,
       tags: [
          {
             slug: 'nodejs',

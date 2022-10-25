@@ -17,7 +17,7 @@ function Posts() {
             <div className="max-w-screen-xl mx-auto">
                <div className="grid grid-cols-12">
                   <div className="col-span-9 pr-5">
-                     <PostContainer list={FakeData.Posts.data} Component={PostItem} />
+                     <PostContainer list={FakeData.Posts.posts} Component={PostItem} />
                   </div>
                   <div className="col-span-3">
                      <StickySidebar />

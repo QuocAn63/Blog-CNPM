@@ -1,4 +1,4 @@
-import { faPen } from '@fortawesome/free-solid-svg-icons';
+import { faPen, faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 
 const GlobalNavList = [
    {
@@ -45,4 +45,29 @@ const PostsNavList = {
    path: '/publish/post',
 };
 
-export { GlobalNavList, PostsNavList };
+const QuestionsNavList = {
+   list: [
+      {
+         name: 'Đang theo dõi',
+         path: 'followings',
+         exact: true,
+      },
+      {
+         name: 'Mới nhất',
+         path: 'newest',
+      },
+      {
+         name: 'Chưa giải quyết',
+         path: 'unsolved',
+      },
+      {
+         name: 'Bookmarks của tôi',
+         path: 'bookmarks',
+      },
+   ],
+   title: 'Đặt câu hỏi',
+   icon: faQuestionCircle,
+   path: '/publish/question',
+};
+
+export { GlobalNavList, PostsNavList, QuestionsNavList };

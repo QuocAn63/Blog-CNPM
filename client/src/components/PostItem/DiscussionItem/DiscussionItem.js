@@ -54,7 +54,7 @@ function DiscussionItem() {
                Cho mình hỏi chút là mình chỉ login được với 1 account facebook mình dùng để tạo ứng dụng phát triển, còn
                các account fb khác thì mình login nó báo ứng dụng không hoạt động
             </p>
-            <div className="mt-10">
+            <div className="mt-6">
                <MetaItem title="points" content="0" />
             </div>
          </div>

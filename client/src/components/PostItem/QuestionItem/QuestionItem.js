@@ -15,7 +15,7 @@ function QuestionItem(props) {
       <div className="flex items-center gap-10">
         <div>
           <div>
-            <MetaItem title="time" content="10 tháng 2 năm 2022" />
+            <MetaItem title="publishedAt" content="10 tháng 2 năm 2022" />
           </div>
           <div className="flex items-center gap-5 mt-1">
             <MetaItem title="reply" content="0" />

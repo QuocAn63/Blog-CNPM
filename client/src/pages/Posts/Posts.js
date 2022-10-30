@@ -1,7 +1,7 @@
 import React from 'react';
 import Banner from '~/components/Banner';
 import { FeedBar } from '~/components/Filter';
-import StickySidebar from '~/components/StickySidebar';
+import { GlobalStickySidebar } from '~/components/StickySidebar';
 import config from '~/config';
 import { PostItem } from '~/components/PostItem';
 import { PostContainer } from '~/components/PostContainer';
@@ -20,7 +20,7 @@ function Posts() {
                      <PostContainer list={FakeData.Posts.posts} Component={PostItem} />
                   </div>
                   <div className="col-span-3">
-                     <StickySidebar />
+                     <GlobalStickySidebar />
                   </div>
                </div>
             </div>

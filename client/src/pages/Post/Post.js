@@ -6,7 +6,7 @@ import { PostSidebar } from '~/components/Sidebar';
 
 function Post() {
    return (
-      <div className="max-w-screen-xl m-auto">
+      <div className="max-w-screen-xl md:max-w-screen-md m-auto">
          <Banner src="" />
          <div className="py-10">
             <div className="grid grid-cols-12">

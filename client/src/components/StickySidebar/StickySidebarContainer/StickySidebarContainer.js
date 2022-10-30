@@ -9,6 +9,7 @@ const cx = classNames.bind(styles);
 function StickySidebarContainer({ title, data }) {
    let Comp = '';
 
+   // eslint-disable-next-line default-case
    switch (data.type) {
       case 'post':
          Comp = PostSidebarItem;

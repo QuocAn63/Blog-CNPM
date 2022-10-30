@@ -4,7 +4,7 @@ const routes = {
    posts: '/posts',
    post: '/post/:slug',
    questions: '/questions',
-   question: '/questionWr/:slug',
+   question: '/question/:slug',
    discussions: '/discussions',
    discussion: '/discussion/:slug',
    user: '/user/:username',

@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBookmark, faCalendar, faCaretDown, faCaretUp, faComment, faPen, faReply, faUserPlus } from '@fortawesome/free-solid-svg-icons';
+import { faBookmark, faCalendar, faCaretDown, faCaretUp, faComment, faFlag, faPen, faReply, faUserPlus } from '@fortawesome/free-solid-svg-icons';
 import { forwardRef, memo } from 'react';
 
 const metaInformations = {
@@ -41,19 +41,23 @@ const metaInformations = {
    downvote: {
       title: "Downvote",
       icon: faCaretDown
+   },
+   report: {
+      title: "Báo cáo",
+      icon: faFlag
    }
 };
 
 const Item = forwardRef(({ content, icon, onClick, className }, ref) => {
    return (
-      <div className={'inline-flex items-center text-gray-500 text-center ' + className} ref={ref} onClick={onClick}>
-         {icon && <FontAwesomeIcon icon={icon} className="inline-block w-full" />}
-         <span className="ml-1">{content}</span>
+      <div className={'text-gray-500 text-center ' + className} ref={ref} onClick={onClick}>
+         {icon && <FontAwesomeIcon icon={icon} />}
+         {content && <span className="ml-1">{content}</span>}
       </div>
    );
 });
 
-function MetaItem({ title, content, icon, className = "", onClick, base, large, ...passprops }) {
+function MetaItem({ title, content, icon, className = "", onClick, base, large, placement = "bottom", ...passprops }) {
    icon = metaInformations[title].icon;
    title = metaInformations[title].title;
 
@@ -70,7 +74,7 @@ function MetaItem({ title, content, icon, className = "", onClick, base, large, 
    }
 
    return title !== undefined ? (
-      <Tippy content={title} placement="bottom">
+      <Tippy content={title} placement={placement}>
          <Item content={content} icon={icon} onClick={onClick} className={className} />
       </Tippy>
    ) : (

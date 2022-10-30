@@ -6,6 +6,7 @@ import PostsPage from '~/pages/Posts';
 import QuestionsPage from '~/pages/Questions';
 import DiscussionsPage from '~/pages/Discussions';
 import PostPage from '~/pages/Post';
+import QuestionPage from '~/pages/Question';
 
 const publicRoutes = [
    {
@@ -61,6 +62,10 @@ const publicRoutes = [
       path: config.routes.post,
       component: PostPage,
    },
+   {
+      path: config.routes.question,
+      component: QuestionPage
+   }
 ];
 
 export { publicRoutes };

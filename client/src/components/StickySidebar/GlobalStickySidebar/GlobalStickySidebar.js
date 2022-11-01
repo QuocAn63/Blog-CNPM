@@ -2,9 +2,12 @@ import FakeData from '~/FakeData';
 import StickySidebar from '../StickySidebar';
 import StickySidebarContainer from '../StickySidebarContainer';
 
-function GlobalStickySidebar() {
+function GlobalStickySidebar({ offsetTop, offsetBottom }) {
+
    return (
       <StickySidebar
+         offsetTop={offsetTop}
+         offsetBottom={offsetBottom}
          render={() => (
             <div className=" p-2 max-h-[calc(100vh_-_94px)] overflow-y-hidden hover:overflow-y-scroll">
                <StickySidebarContainer title="Bài viết mới nhất" data={FakeData.Sidebar.Posts} />

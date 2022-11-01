@@ -10,7 +10,7 @@ const cx = classNames.bind(styles);
 function Feedbar({ list, path, icon, title }) {
    return (
       <div className="bg-sky-900">
-         <div className="max-w-screen-xl m-auto">
+         <div className="max-w-screen-xl m-auto px-5">
             <div className="flex items-center justify-between">
                <div className="flex items-center gap-10 py-4">
                   {list.map((item, index) => (

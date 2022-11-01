@@ -17,7 +17,7 @@ function App() {
                      path={route.path}
                      exact={route.exact}
                      element={
-                        <Layout>
+                        <Layout {...route}>
                            <Page />
                         </Layout>
                      }

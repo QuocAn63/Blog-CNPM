@@ -4,6 +4,7 @@ import classNames from 'classnames/bind';
 import MetaItem from '~/components/MetaItem';
 import { Link } from 'react-router-dom';
 import Tag from '~/components/Tag';
+import { memo } from 'react';
 
 const cx = classNames.bind(styles);
 
@@ -43,4 +44,4 @@ function QuestionItem(props) {
   )
 }
 
-export default QuestionItem
+export default memo(QuestionItem)

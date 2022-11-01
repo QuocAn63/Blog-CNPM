@@ -5,8 +5,10 @@ function DefaultLayout({ children }) {
    return (
       <>
          <Header />
-         <div className="mt-16">
-            {children}
+         <div className="mt-32">
+            <div className="max-w-screen-sm xl:max-w-screen-xl m-auto">
+               {children}
+            </div>
          </div>
          <Footer />
       </>

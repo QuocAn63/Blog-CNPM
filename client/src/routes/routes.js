@@ -1,5 +1,8 @@
 import config from '~/config';
 
+// Layout
+import { DefaultWithFeedbar } from '~/layout'
+
 // Pages
 import HomePage from '~/pages/Home';
 import PostsPage from '~/pages/Posts';
@@ -17,6 +20,8 @@ const publicRoutes = [
    {
       path: config.routes.posts,
       component: PostsPage,
+      layout: DefaultWithFeedbar,
+      feedbar: config.itemList.PostsNavList,
       subPath: [
          {
             path: 'followings',
@@ -35,6 +40,8 @@ const publicRoutes = [
    {
       path: config.routes.questions,
       component: QuestionsPage,
+      layout: DefaultWithFeedbar,
+      feedbar: config.itemList.QuestionsNavList,
       subPath: [
          {
             path: 'unsolved',

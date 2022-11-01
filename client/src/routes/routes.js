@@ -1,7 +1,7 @@
 import config from '~/config';
 
 // Layout
-import { DefaultWithFeedbar } from '~/layout'
+import { DefaultWithFeedbar, DefaultSidebarless } from '~/layout';
 
 // Pages
 import HomePage from '~/pages/Home';
@@ -64,6 +64,7 @@ const publicRoutes = [
    {
       path: config.routes.discussions,
       component: DiscussionsPage,
+      layout: DefaultSidebarless,
    },
    {
       path: config.routes.post,
@@ -71,8 +72,8 @@ const publicRoutes = [
    },
    {
       path: config.routes.question,
-      component: QuestionPage
-   }
+      component: QuestionPage,
+   },
 ];
 
 export { publicRoutes };

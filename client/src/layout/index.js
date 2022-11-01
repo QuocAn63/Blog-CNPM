@@ -1,4 +1,4 @@
 import DefaultLayout from "./DefaultLayout";
 import DefaultWithFeedbar from './DefaultWithFeedbar'
-
-export { DefaultLayout, DefaultWithFeedbar }
+import DefaultSidebarless from "./DefaultSidebarless";
+export { DefaultLayout, DefaultWithFeedbar, DefaultSidebarless }

@@ -1,7 +1,13 @@
-const siteRouter = require('./site');
+const apiRouter = require('./api')
 
-function route(app) {
-    app.use('/', siteRouter); // '/' needs to be in the last row
+class appRoutes {
+    constructor(app) {
+        this.app = app
+    }
+
+    apiRouter() {
+        this.app.use('/api', apiRouter)
+    }
 }
 
-module.exports = route;
+module.exports = appRoutes

@@ -1,23 +1,20 @@
 const path = require('path');
-const express = require('express');
 const morgan = require('morgan');
-const app = express();
-const port = 3000;
+const express = require('express');
 const route = require('./src/routes');
 const db = require('./src/config/dbConnector');
+require('dotenv').config();
+
+const app = express();
 
 //Connect to DB
 db.connect();
 
 app.use(express.json());
 
-//HTTP logger
-// app.use(morgan('combined'));
+const appRouter = new route(app)
+appRouter.apiRouter()
 
-
-//Route inits
-route(app);
-
-    app.listen(port, () => {
-    console.log(`App listening on port http://localhost:${port}`);
-});
+app.listen(process.env.PORT, (req, res) => {
+    console.log('App is running on port ' + process.env.PORT)
+})

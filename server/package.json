@@ -1,28 +1,36 @@
 {
-  "dependencies": {
-    "express": "^4.18.2",
-    "mongoose": "^6.6.6",
-    "morgan": "^1.10.0",
-    "nodemon": "^2.0.20"
-  },
   "name": "blog-cnpm",
   "version": "1.0.0",
   "main": "app.js",
-  "devDependencies": {},
   "scripts": {
-    "start": "nodemon --inspect ./app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --inspect"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/QuocAn63/Blog-CNPM.git"
+    "url": "git+https://github.com/QuocAn63/myblog-server.git"
   },
-  "keywords": [],
-  "author": "",
+  "author": "Doan Thanh Huy",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/QuocAn63/Blog-CNPM/issues"
+    "url": "https://github.com/QuocAn63/myblog-server/issues"
   },
-  "homepage": "https://github.com/QuocAn63/Blog-CNPM#readme",
-  "description": ""
+  "homepage": "https://github.com/QuocAn63/myblog-server#readme",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-validator": "^6.14.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.4.4",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "slugify": "^1.6.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
 }

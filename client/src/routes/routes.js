@@ -4,7 +4,7 @@ import config from '~/config';
 import { DefaultSidebarless } from '~/layout';
 
 // Sidebar
-import { PostSidebar } from '~/components/Sidebar';
+import PostSidebar from '~/layout/components/Sidebar';
 
 // Pages
 import HomePage from '~/pages/Home';
@@ -70,12 +70,12 @@ const publicRoutes = [
    {
       path: config.routes.post,
       component: PostPage,
-      Sidebar: PostSidebar
+      Sidebar: PostSidebar,
    },
    {
       path: config.routes.question,
       component: QuestionPage,
-      Sidebar: PostSidebar
+      Sidebar: PostSidebar,
    },
 ];
 

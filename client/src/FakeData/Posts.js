@@ -132,3 +132,38 @@ export const singlePost = {
       },
    },
 }
+
+export const singleQuestion = {
+   slug: '1-bai-blog-mau',
+   title: "Hỏi về mẫu design database website tương tự Viblo",
+   content: "Chào mn, hiện tại em đang làm project môn học website hỏi đáp tương tự Viblo, có ai đã từng làm rồi cho em xin design database hoặc design flow mẫu với ạ. Em cảm ơn ạ",
+   tags: [
+      {
+         slug: 'nodejs',
+         title: 'NodeJS',
+      },
+      {
+         slug: 'reactjs',
+         title: 'ReactJS',
+      },
+   ],
+   points: 4,
+   isUpvoted: false,
+   isDownvoted: false,
+   bookmarks: 0,
+   replies: 0,
+   publishedAt: '10 tháng 2 năm 2022',
+   created_at: '',
+   updated_at: '',
+   user: {
+      data: {
+         username: 'caoquocan',
+         fullname: 'Cao Quốc Ân',
+         avatar: '',
+         following: false,
+         followers_count: 0,
+         posts_count: 0,
+         questions_count: 0,
+      },
+   },
+}

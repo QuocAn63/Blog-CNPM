@@ -2,7 +2,18 @@ import PropTypes from 'prop-types';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBookmark, faCalendar, faCaretDown, faCaretUp, faComment, faFlag, faPen, faQuestion, faReply, faUserPlus } from '@fortawesome/free-solid-svg-icons';
+import {
+   faBookmark,
+   faCalendar,
+   faCaretDown,
+   faCaretUp,
+   faComment,
+   faFlag,
+   faPen,
+   faQuestion,
+   faReply,
+   faUserPlus,
+} from '@fortawesome/free-solid-svg-icons';
 import { forwardRef, memo } from 'react';
 
 const metaInformations = {
@@ -31,51 +42,52 @@ const metaInformations = {
       icon: faPen,
    },
    questions: {
-      title: "Câu hỏi",
-      icon: faQuestion
+      title: 'Câu hỏi',
+      icon: faQuestion,
    },
    publishedAt: {
       title: 'Thời gian xuất bản',
       icon: faCalendar,
    },
    upvote: {
-      title: "Upvote",
-      icon: faCaretUp
+      title: 'Upvote',
+      icon: faCaretUp,
    },
    downvote: {
-      title: "Downvote",
-      icon: faCaretDown
+      title: 'Downvote',
+      icon: faCaretDown,
    },
    report: {
-      title: "Báo cáo",
-      icon: faFlag
-   }
+      title: 'Báo cáo',
+      icon: faFlag,
+   },
 };
 
 const Item = forwardRef(({ content, icon, onClick, className }, ref) => {
    return (
       <div className={'inline-block text-gray-500 text-center ' + className} ref={ref} onClick={onClick}>
          {icon && <FontAwesomeIcon icon={icon} />}
-         {content && <span className="ml-1">{content}</span>}
+         {content != undefined ? <span className="ml-1">{content}</span> : ''}
       </div>
    );
 });
 
-function MetaItem({ title, content, icon, className = "", onClick, base, large, placement = "bottom", ...passprops }) {
+function MetaItem({ title, content, icon, className = '', onClick, base, large, placement = 'bottom', ...passprop }) {
    icon = metaInformations[title].icon;
    title = metaInformations[title].title;
 
    if (base) {
-      className += " text-base";
+      className += ' text-base';
    } else if (large) {
-      className += " text-lg"
+      className += ' text-lg';
    } else {
-      className += " text-sm"
+      className += ' text-sm';
    }
 
    if (onClick) {
-      className += " cursor-pointer"
+      className += ' cursor-pointer';
    }
+   const passprops = { content, icon, onClick, className };
 
    return title !== undefined ? (
       <Tippy content={title} placement={placement}>

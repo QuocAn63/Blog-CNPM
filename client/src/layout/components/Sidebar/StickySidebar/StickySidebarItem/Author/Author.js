@@ -3,7 +3,7 @@ import React, { memo } from 'react';
 import styles from './Author.module.scss';
 import classNames from 'classnames/bind';
 import MetaItem from '~/components/MetaItem';
-import UserSidebar from '~/components/Sidebar/UserSidebar';
+import UserSidebar from '~/layout/components/Sidebar/UserSidebar';
 
 const cx = classNames.bind(styles);
 

@@ -4,7 +4,7 @@ import QuestionDetail from './QuestionDetail'
 
 function Question() {
     return (
-        <QuestionDetail {...FakeData.Posts.singlePost} />
+        <QuestionDetail {...FakeData.Posts.singleQuestion} />
 
     )
 }

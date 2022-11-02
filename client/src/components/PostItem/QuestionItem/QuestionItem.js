@@ -5,6 +5,7 @@ import MetaItem from '~/components/MetaItem';
 import { Link } from 'react-router-dom';
 import Tag from '~/components/Tag';
 import { memo } from 'react';
+import TagContainer from '~/components/TagContainer';
 
 const cx = classNames.bind(styles);
 
@@ -19,23 +20,21 @@ function QuestionItem(props) {
             <MetaItem title="publishedAt" content="10 tháng 2 năm 2022" />
           </div>
           <div className="flex items-center gap-5 mt-1">
-            <MetaItem title="reply" content="0" />
-            <MetaItem title="points" content="0" />
-            <MetaItem title="comments" content="0" />
+            <MetaItem title="reply" content={reply_count} />
+            <MetaItem title="points" content={points} />
+            <MetaItem title="comments" content={comments_count} />
           </div>
         </div>
         <div className="flex-1">
           <div>
-            <Link className="text-sky-600 hover:underline text-sm hover:text-sky-800">{user.data.fullname}</Link>
+            <Link className="text-sky-600 hover:underline text-sm hover:text-sky-800" to={`/author/${user.data.username}`}>{user.data.fullname}</Link>
           </div>
           <div className="flex items-center gap-4 flex-wrap">
-            <Link to={slug} className="block text-lg font-medium shrink-0 hover:text-sky-600">
+            <Link to={`/question/${slug}`} className="block text-lg font-medium shrink-0 hover:text-sky-600">
               {isSolved && <span className="text-green-800 font-bold">[SOLVED]</span>} {title}
             </Link>
             <div className="flex items-center gap-2">
-              {tags.map((tag, index) => (
-                <Tag title={tag.title} slug={tag.slug} key={index} />
-              ))}
+              <TagContainer tags={tags} />
             </div>
           </div>
         </div>

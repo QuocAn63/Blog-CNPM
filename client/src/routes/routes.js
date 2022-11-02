@@ -1,7 +1,10 @@
 import config from '~/config';
 
 // Layout
-import { DefaultWithFeedbar, DefaultSidebarless } from '~/layout';
+import { DefaultSidebarless } from '~/layout';
+
+// Sidebar
+import { PostSidebar } from '~/components/Sidebar';
 
 // Pages
 import HomePage from '~/pages/Home';
@@ -20,7 +23,6 @@ const publicRoutes = [
    {
       path: config.routes.posts,
       component: PostsPage,
-      layout: DefaultWithFeedbar,
       feedbar: config.itemList.PostsNavList,
       subPath: [
          {
@@ -40,7 +42,6 @@ const publicRoutes = [
    {
       path: config.routes.questions,
       component: QuestionsPage,
-      layout: DefaultWithFeedbar,
       feedbar: config.itemList.QuestionsNavList,
       subPath: [
          {
@@ -69,10 +70,12 @@ const publicRoutes = [
    {
       path: config.routes.post,
       component: PostPage,
+      Sidebar: PostSidebar
    },
    {
       path: config.routes.question,
       component: QuestionPage,
+      Sidebar: PostSidebar
    },
 ];
 

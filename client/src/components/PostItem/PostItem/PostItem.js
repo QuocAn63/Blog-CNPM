@@ -7,6 +7,7 @@ import Image from '~/components/Image';
 import Tag from '~/components/Tag';
 import MetaItem from '~/components/MetaItem';
 import { memo } from 'react';
+import TagContainer from '~/components/TagContainer';
 
 const cx = classNames.bind(styles);
 
@@ -34,9 +35,7 @@ function PostItem(props) {
                      {title}
                   </Link>
                   <div className="flex items-center gap-2">
-                     {tags.map((tag, index) => (
-                        <Tag title={tag.title} slug={tag.slug} key={index} />
-                     ))}
+                     <TagContainer tags={tags} />
                   </div>
                </div>
                <div className="mt-1 flex justify-between items-center">

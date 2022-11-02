@@ -3,7 +3,8 @@ export const author = {
     fullname: 'Cao Quốc Ân',
     avatar: '',
     following: false,
-    followers_count: 0,
-    posts_count: 0,
-    questions_count: 0,
+    points: 0,
+    followers: 0,
+    posts: 0,
+    questions: 0,
 }

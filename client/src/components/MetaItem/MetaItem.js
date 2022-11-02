@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBookmark, faCalendar, faCaretDown, faCaretUp, faComment, faFlag, faPen, faReply, faUserPlus } from '@fortawesome/free-solid-svg-icons';
+import { faBookmark, faCalendar, faCaretDown, faCaretUp, faComment, faFlag, faPen, faQuestion, faReply, faUserPlus } from '@fortawesome/free-solid-svg-icons';
 import { forwardRef, memo } from 'react';
 
 const metaInformations = {
@@ -30,6 +30,10 @@ const metaInformations = {
       title: 'Bài viết',
       icon: faPen,
    },
+   questions: {
+      title: "Câu hỏi",
+      icon: faQuestion
+   },
    publishedAt: {
       title: 'Thời gian xuất bản',
       icon: faCalendar,
@@ -50,7 +54,7 @@ const metaInformations = {
 
 const Item = forwardRef(({ content, icon, onClick, className }, ref) => {
    return (
-      <div className={'text-gray-500 text-center ' + className} ref={ref} onClick={onClick}>
+      <div className={'inline-block text-gray-500 text-center ' + className} ref={ref} onClick={onClick}>
          {icon && <FontAwesomeIcon icon={icon} />}
          {content && <span className="ml-1">{content}</span>}
       </div>

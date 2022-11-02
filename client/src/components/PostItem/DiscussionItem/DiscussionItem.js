@@ -33,13 +33,13 @@ function DiscussionItem() {
       <div className={cx('wrapper') + ' px-2 py-4'}>
          <div>
             <div className="flex items-center justify-between w-full">
-               <div className="flex items-center">
+               <div className="flex items-center whitespace-nowrap">
                   <User {...user} />
                   <span className="mr-4 text-sm flex">
                      đã bình luận cho bài viết{' '}
                      <Link
                         to="/"
-                        className="mx-4 inline-block w-[30vw] text-ellipsis whitespace-nowrap overflow-hidden text-sky-600 hover:text-sky-800 hover:underline"
+                        className="mx-4 inline-block max-w-[20vw] text-ellipsis whitespace-nowrap overflow-hidden text-sky-600 hover:text-sky-800 hover:underline"
                      >
                         Hướng dẫn sử dụng Redux trong Reactjs Hướng dẫn sử dụng Redux trong Reactjs Hướng dẫn sử dụng
                         Redux trong Reactjs Hướng dẫn sử dụng Redux trong Reactjs Hướng dẫn sử dụng Redux trong Reactjs

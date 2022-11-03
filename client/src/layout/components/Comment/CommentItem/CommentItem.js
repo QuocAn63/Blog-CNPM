@@ -1,26 +1,50 @@
-import React from 'react';
+import { faFlag } from '@fortawesome/free-solid-svg-icons';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Button from '~/components/Button';
 import Image from '~/components/Image';
+import MetaItem from '~/components/MetaItem';
+import { useMarkupHTML } from '~/hooks'
+
+import styles from './CommentItem.module.scss'
+import classNames from 'classnames/bind'
+import CommentRoot from '../CommentRoot';
+
+const cx = classNames.bind(styles)
 
 function CommentItem(props) {
-   const { user, publishedAt } = props;
+   const { user, content, publishedAt, reply } = props;
+   const [isReplying, setIsReplying] = useState(false)
+   const markedupContent = useMarkupHTML(content)
 
    return (
-      <div>
-         <div>
+      <div className={cx('wrapper', reply && "reply")}>
+         <div className="flex items-center">
             <Link to={`/author/${user.data.username}`} className="inline-block mx-3">
                <Image src="" className="w-10 h-10 rounded-full" />
             </Link>
-            <div className="text-sm">
+            <div className="text-sm leading-6">
+               <Link to={`/author/${user.data.username}`} className="inline-block font-bold text-sky-600 hover:underline">
+                  {user.data.fullname}<span className="ml-2 text-gray-400">@{user.data.username}</span>
+               </Link>
                <div>
-                  <Link to={`/author/${user.data.username}`} className="inline-block font-bold text-sky-600">
-                     {user.data.fullname}
-                  </Link>
-                  <span className="ml-2 text-gray-400">@{user.data.username}</span>
+                  <span className="text-gray-400 mt-1">{publishedAt}</span>
                </div>
-               <span className="text-gray-400">{publishedAt}</span>
             </div>
          </div>
+         <div dangerouslySetInnerHTML={markedupContent} className="my-5"></div>
+         <div className="flex items-center">
+            <MetaItem title="upvote" content="0" onClick={() => { alert("Upvote Comment") }} className="mr-2" />
+            <MetaItem title="downvote" content="0" onClick={() => { alert("Downvote Comment") }} />
+            <span className="w-[1px] h-4 bg-gray-400 inline-block mx-5"></span>
+            <Button className="text-sm p-0 text-sky-600 hover:text-sky-700 hover:underline" onClick={() => setIsReplying(!isReplying)} >Trả lời</Button>
+            <Button className="text-sm p-0 text-red-400 hover:text-red-600 hover:underline" leftIcon={faFlag} >Báo cáo</Button>
+         </div>
+         {isReplying && (
+            <div className="">
+               <CommentRoot onCancel={() => setIsReplying(false)} />
+            </div>
+         )}
       </div>
    );
 }

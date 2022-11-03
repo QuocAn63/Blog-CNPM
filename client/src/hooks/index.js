@@ -1,2 +1,2 @@
-import { usePagination, DOTS } from './usePagination';
-export { usePagination, DOTS };
+export { default as useMarkupHTML } from './useMarkupHTML'
+export { usePagination, DOTS } from './usePagination';

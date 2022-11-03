@@ -4,6 +4,6 @@ const userController = require('../controllers/UserController');
 
 // newsController.index
 
-router.get('/:slug', userController.index);
+router.get('/:username', userController.get);
 
 module.exports = router;

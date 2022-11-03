@@ -4,7 +4,7 @@ import config from '~/config';
 import { DefaultSidebarless } from '~/layout';
 
 // Sidebar
-import PostSidebar from '~/layout/components/Sidebar';
+import { PostSidebar } from '~/layout/components/Sidebar';
 
 // Pages
 import HomePage from '~/pages/Home';

@@ -1,5 +1,4 @@
 import React from 'react';
-import Banner from '~/components/Banner';
 import { DiscussionContainer } from '~/components/PostContainer';
 import { DiscussionItem } from '~/components/PostItem';
 

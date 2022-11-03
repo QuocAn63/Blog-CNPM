@@ -18,7 +18,7 @@ import {
 import Tippy from '@tippyjs/react/';
 import Image from '~/components/Image';
 import 'tippy.js/dist/tippy.css';
-import AccountMenu from '~/components/AccountMenu';
+import AccountMenu from '~/layout/components/AccountMenu';
 
 import FakeData from '~/FakeData';
 

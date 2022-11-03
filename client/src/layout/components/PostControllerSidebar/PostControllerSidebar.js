@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import MetaItem from '~/components/MetaItem';
-import StickySidebar from '~/layout/components/Sidebar';
+import { StickySidebar } from '~/layout/components/Sidebar';
 import styles from './PostControllerSidebar.module.scss';
 import classNames from 'classnames/bind';
 

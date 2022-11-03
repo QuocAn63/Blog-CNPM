@@ -1,7 +1,7 @@
 import React from 'react';
 import MetaItem from '~/components/MetaItem';
 import { TagContainer } from '~/components/Tag';
-import PostControllerSidebar from '~/layout/components/PostControllerSidebar';
+import PostControllerSidebar from '~/layout/components/PostControllerSidebar'
 
 function createMarkup(content) {
    return { __html: content };

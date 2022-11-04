@@ -13,7 +13,6 @@ function Post() {
             <CommentRoot />
             <CommentContainer {...FakeData.Posts.singlePost} />
          </div>
-
       </>
    );
 }

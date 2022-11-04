@@ -1,7 +1,7 @@
 import React from 'react';
 import MetaItem from '~/components/MetaItem';
 import { TagContainer } from '~/components/Tag';
-import PostControllerSidebar from '~/layout/components/PostControllerSidebar'
+import PostControllerSidebar from '~/layout/components/PostControllerSidebar';
 
 function createMarkup(content) {
    return { __html: content };
@@ -15,7 +15,7 @@ function PostDetail(props) {
          <div className="h-full">
             <PostControllerSidebar {...props} bookmark report />
          </div>
-         <div className="bg-white rounded shadow p-5">
+         <div className="bg-white rounded shadow p-5 w-full">
             <div className="pb-8">
                <p className="text-sm text-gray-500">Đã đăng vào khoảng 15 giờ trước</p>
                <div className="flex gap-5 mt-2">

@@ -113,8 +113,6 @@ export const singlePost = {
       },
    ],
    points: 4,
-   isUpvoted: false,
-   isDownvoted: false,
    bookmarks_count: 0,
    comments_count: 0,
    publishedAt: '10 tháng 2 năm 2022',
@@ -131,6 +129,63 @@ export const singlePost = {
          questions_count: 0,
       },
    },
+   comments: [
+      {
+         content: "<p>Lấy ý tưởng từ QEMUBootTester nhìn thấy t",
+         publishedAt: '10 tháng 2 năm 2022',
+         created_at: '',
+         updated_at: '',
+         isUpvoted: true,
+         user: {
+            data: {
+               username: 'caoquocan',
+               fullname: 'Cao Quốc Ân',
+               avatar: '',
+               following: false,
+               followers_count: 0,
+               posts_count: 0,
+               questions_count: 0,
+            },
+         },
+         replies: [
+            {
+               content: "<p>Lấy ý tưởng từ QEMUBootTester nhìn thấy t",
+               publishedAt: '10 tháng 2 năm 2022',
+               created_at: '',
+               updated_at: '',
+               user: {
+                  data: {
+                     username: 'caoquocan',
+                     fullname: 'Cao Quốc Ân',
+                     avatar: '',
+                     following: false,
+                     followers_count: 0,
+                     posts_count: 0,
+                     questions_count: 0,
+                  },
+               }
+            },
+            {
+               content: "<p>Lấy ý tưởng từ QEMUBootTester nhìn thấy t",
+               publishedAt: '10 tháng 2 năm 2022',
+               created_at: '',
+               updated_at: '',
+               isUpvoted: true,
+               user: {
+                  data: {
+                     username: 'caoquocan',
+                     fullname: 'Cao Quốc Ân',
+                     avatar: '',
+                     following: false,
+                     followers_count: 0,
+                     posts_count: 0,
+                     questions_count: 0,
+                  },
+               }
+            }
+         ]
+      }
+   ]
 };
 
 export const singleQuestion = {

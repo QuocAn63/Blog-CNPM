@@ -1,4 +1,3 @@
-import { Fragment } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import DefaultLayout from '~/layout/DefaultLayout';
 import { publicRoutes } from '~/routes';
@@ -8,7 +7,7 @@ function App() {
       <BrowserRouter>
          <Routes>
             {publicRoutes.map((route, index) => {
-               const Layout = route.layout === null ? Fragment : route.layout || DefaultLayout;
+               const Layout = route.layout === null ? "div" : route.layout || DefaultLayout;
                const Page = route.component;
 
                return (
@@ -17,7 +16,7 @@ function App() {
                      path={route.path}
                      exact={route.exact}
                      element={
-                        <Layout {...route}>
+                        <Layout feedbar={route.feedbar} sidebar={route.Sidebar}>
                            <Page />
                         </Layout>
                      }

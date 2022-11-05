@@ -13,6 +13,7 @@ import QuestionsPage from '~/pages/Questions';
 import DiscussionsPage from '~/pages/Discussions';
 import PostPage from '~/pages/Post';
 import QuestionPage from '~/pages/Question';
+import LoginPage from '~/pages/Login'
 
 const publicRoutes = [
    {
@@ -77,6 +78,11 @@ const publicRoutes = [
       component: QuestionPage,
       Sidebar: PostSidebar,
    },
+   {
+      path: config.routes.login,
+      component: LoginPage,
+      layout: null
+   }
 ];
 
 export { publicRoutes };

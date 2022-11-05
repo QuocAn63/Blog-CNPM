@@ -1,10 +1,6 @@
 import React, { memo } from 'react';
 import MetaItem from '~/components/MetaItem';
 import { StickySidebar } from '~/layout/components/Sidebar';
-import styles from './PostControllerSidebar.module.scss';
-import classNames from 'classnames/bind';
-
-const cx = classNames.bind(styles);
 
 function PostControllerSidebar({ points, isUpvoted, isDownvoted, bookmark = false, report = false, ...props }) {
    return (
@@ -16,18 +12,18 @@ function PostControllerSidebar({ points, isUpvoted, isDownvoted, bookmark = fals
                   <div className="flex flex-col items-center">
                      <MetaItem
                         title="upvote"
-                        className={(isUpvoted ? cx('voted') : '') + ' text-4xl'}
+                        className={(isUpvoted ? 'voted' : '') + ' text-4xl'}
                         onClick={() => {
                            alert('upvote');
                         }}
                         placement="right"
                      />
-                     <span className={(isUpvoted || isDownvoted ? cx('voted') : '') + ' py-1 text-4xl text-gray-500'}>
+                     <span className={(isUpvoted || isDownvoted ? 'voted' : '') + ' py-1 text-4xl text-gray-500'}>
                         {points}
                      </span>
                      <MetaItem
                         title="downvote"
-                        className={(isDownvoted ? cx('voted') : '') + ' text-4xl'}
+                        className={(isDownvoted ? 'voted' : '') + ' text-4xl'}
                         onClick={() => {
                            alert('upvote');
                         }}

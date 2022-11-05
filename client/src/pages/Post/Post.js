@@ -11,7 +11,11 @@ function Post() {
          <div className="mt-10">
             <p className="font-bold text-xl mb-6">Bình luận</p>
             <CommentRoot />
-            <CommentContainer {...FakeData.Posts.singlePost} />
+            {
+               FakeData.Posts.singlePost.comments && FakeData.Posts.singlePost.comments.map((comment, index) =>
+                  <CommentContainer key={index} {...comment} />
+               )
+            }
          </div>
       </>
    );

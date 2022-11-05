@@ -5,7 +5,7 @@ import Footer from '../partials/Footer';
 import Header from '../partials/Header';
 
 function DefaultLayout({ children, ...props }) {
-   const { feedbar, Sidebar } = props;
+   const { feedbar, sidebar: Sidebar } = props;
 
    return (
       <>

@@ -13,12 +13,12 @@ import CommentRoot from '../CommentRoot';
 const cx = classNames.bind(styles);
 
 function CommentItem(props) {
-   const { user, content, publishedAt, reply, answer = false, accepted = false } = props;
+   const { user, content, publishedAt, answer = false, accepted = false, isUpvoted, isDownvoted } = props;
    const [isReplying, setIsReplying] = useState(false);
    const markedupContent = useMarkupHTML(content);
 
    return (
-      <div className={cx('wrapper', reply && 'reply')}>
+      <div className={cx('wrapper')}>
          <div className="flex items-center">
             <Link to={`/author/${user.data.username}`} className="inline-block mx-3">
                <Image src="" className="w-10 h-10 rounded-full" />
@@ -74,7 +74,7 @@ function CommentItem(props) {
                      onClick={() => {
                         alert('Upvote Comment');
                      }}
-                     className="mr-2"
+                     className={(isUpvoted && "voted") + " mr-2"}
                   />
                   <MetaItem
                      title="downvote"
@@ -82,6 +82,7 @@ function CommentItem(props) {
                      onClick={() => {
                         alert('Downvote Comment');
                      }}
+                     className={isDownvoted && "voted"}
                   />
                   <span className="w-[1px] h-4 bg-gray-400 inline-block mx-5"></span>
                </>

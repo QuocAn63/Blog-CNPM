@@ -1,10 +1,9 @@
-import PropTypes from 'prop-types';
 import styles from './PostItem.module.scss';
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
 
 import Image from '~/components/Image';
-import Tag, { TagContainer } from '~/components/Tag';
+import { TagContainer } from '~/components/Tag';
 import MetaItem from '~/components/MetaItem';
 import { memo } from 'react';
 

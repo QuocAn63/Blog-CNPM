@@ -23,6 +23,7 @@ import AccountMenu from '~/layout/components/AccountMenu';
 import FakeData from '~/FakeData';
 
 function Header() {
+   // eslint-disable-next-line no-unused-vars
    const [notifies, setNotifies] = useState(FakeData.Notify);
    const isLoggedIn = false;
 
@@ -44,7 +45,7 @@ function Header() {
             path: '/settings',
          },
       ];
-   });
+   }, []);
 
    return (
       <div className="fixed top-0 left-0 right-0 flex items-center justify-center h-16 bg-white z-50 shadow-lg">

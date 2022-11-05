@@ -67,7 +67,7 @@ const Item = forwardRef(({ content, icon, onClick, className }, ref) => {
    return (
       <div className={'inline-block text-gray-500 text-center ' + className} ref={ref} onClick={onClick}>
          {icon && <FontAwesomeIcon icon={icon} />}
-         {content != undefined ? <span className="ml-1">{content}</span> : ''}
+         {content !== undefined ? <span className="ml-1">{content}</span> : ''}
       </div>
    );
 });
@@ -91,10 +91,10 @@ function MetaItem({ title, content, icon, className = '', onClick, base, large, 
 
    return title !== undefined ? (
       <Tippy content={title} placement={placement}>
-         <Item content={content} icon={icon} onClick={onClick} className={className} />
+         <Item {...passprops} />
       </Tippy>
    ) : (
-      <Item content={content} icon={icon} onClick={onClick} className={className} />
+      <Item {...passprops} />
    );
 }
 

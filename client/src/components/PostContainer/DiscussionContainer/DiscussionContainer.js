@@ -3,10 +3,11 @@ import { useSearchParams } from 'react-router-dom';
 import Pagination from '~/components/Pagination';
 
 function DiscussionContainer({ list, Component }) {
-   let [searchParams, setSearchParams] = useSearchParams();
+   let [, setSearchParams] = useSearchParams();
    const changePage = useCallback((number) => {
       setSearchParams((prev) => ({ ...prev, page: number }));
-   });
+   // eslint-disable-next-line react-hooks/exhaustive-deps
+   }, []);
 
    return (
       <>

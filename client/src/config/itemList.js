@@ -70,4 +70,47 @@ const QuestionsNavList = {
    path: '/publish/question',
 };
 
-export { GlobalNavList, PostsNavList, QuestionsNavList };
+const authFormData = {
+   login: {
+      title: "Đăng nhập",
+      inputs: [{
+         name: "username",
+         label: "Tên tài khoản hoặc Email",
+         placeholder: "Nhập tên tài khoản hoặc địa chỉ Email"
+      }, {
+         name: "password",
+         type: "password",
+         label: "Mật khẩu",
+         placeholder: "Nhập mật khẩu"
+      }]
+   },
+   register: {
+      title: "Đăng ký",
+      inputs: [{
+         name: "fullname",
+         label: "Tên của bạn",
+         placeholder: "Nhập tên của bạn"
+      }, {
+         name: "username",
+         label: "Tên tài khoản",
+         placeholder: "Nhập tên tài khoản"
+      },
+      {
+         name: "email",
+         label: "Địa chỉ Email",
+         placeholder: "Nhập địa chỉ Email"
+      }, {
+         name: "password",
+         type: "password",
+         label: "Mật khẩu",
+         placeholder: "Nhập mật khẩu"
+      },
+      {
+         name: "retypepassword",
+         type: "retypepassword",
+         label: "Xác nhận mật khẩu",
+         placeholder: "Nhập lại mật khẩu"
+      }]
+   }
+}
+export { GlobalNavList, PostsNavList, QuestionsNavList, authFormData };

@@ -3,7 +3,7 @@ import styles from './QuestionItem.module.scss';
 import classNames from 'classnames/bind';
 import MetaItem from '~/components/MetaItem';
 import { Link } from 'react-router-dom';
-import Tag, { TagContainer } from '~/components/Tag';
+import { TagContainer } from '~/components/Tag';
 import { memo } from 'react';
 
 const cx = classNames.bind(styles);
@@ -16,7 +16,7 @@ function QuestionItem(props) {
          <div className="flex items-center gap-10">
             <div>
                <div>
-                  <MetaItem title="publishedAt" content="10 tháng 2 năm 2022" />
+                  <MetaItem title="publishedAt" content={publishedAt} />
                </div>
                <div className="flex items-center gap-5 mt-1">
                   <MetaItem title="reply" content={reply_count} />

@@ -11,7 +11,7 @@ import { useMarkupHTML } from '~/hooks'
 const cx = classNames.bind(styles)
 
 function CommentRoot(props) {
-    const { user, onCancel } = props
+    const { onCancel } = props
     const [commentValue, setCommentValue] = useState("")
     const [commentState, setCommentState] = useState("write")
     const [disabled, setDisabled] = useState(true)

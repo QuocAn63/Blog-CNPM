@@ -8,7 +8,7 @@ const range = (start, end) => {
    return Array.from({ length }, (_, idx) => idx + start);
 };
 
-export const usePagination = ({ totalPageCount, pageSize, siblingCount = 1, currentPage }) => {
+export const usePagination = ({ totalPageCount, siblingCount = 1, currentPage }) => {
    const paginationRange = useMemo(() => {
       const totalPageNumbers = siblingCount + 5;
 
@@ -48,7 +48,7 @@ export const usePagination = ({ totalPageCount, pageSize, siblingCount = 1, curr
          let middleRange = range(leftSiblingIndex, rightSiblingIndex);
          return [firstPageIndex, DOTS, ...middleRange, DOTS, lastPageIndex];
       }
-   }, [totalPageCount, pageSize, siblingCount, currentPage]);
+   }, [totalPageCount, siblingCount, currentPage]);
 
    return paginationRange;
 };

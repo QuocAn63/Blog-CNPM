@@ -1,22 +1,30 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import FormInput from './FormInput';
 import { useForm } from 'react-hook-form';
 import Button from '../Button';
 import { yupResolver } from '@hookform/resolvers/yup';
 import config from '~/config';
 import { Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom'
 
 function LoginForm() {
-   const { username, password } = config.yub.schema;
+   const location = useLocation()
+   const [authMode, setAuthMode] = useState("login")
    const { createYupSchema } = config.yub;
    const {
       register,
       handleSubmit,
-      watch,
+      clearErrors,
       formState: { errors },
    } = useForm({
-      resolver: yupResolver(createYupSchema({ username, password })),
+      resolver: yupResolver(createYupSchema(config.itemList.authFormData[authMode].inputs.reduce((prev, cur) => ({ ...prev, [cur.name]: config.yub.schema[cur.name] }), {}))),
    });
+
+   useEffect(() => {
+      clearErrors()
+      setAuthMode(location.pathname.substring(1))
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+   }, [location])
 
    const onSubmit = (data) => {
       console.log(data);
@@ -26,38 +34,30 @@ function LoginForm() {
       <>
          <div className="">
             <div className="flex justify-center">
-               <span className="text-2xl font-bold mb-5">Đăng nhập</span>
+               <span className="text-2xl font-bold mb-5">{config.itemList.authFormData[authMode].title}</span>
             </div>
             <div>
                <form onSubmit={handleSubmit(onSubmit)}>
                   <div>
-                     <FormInput
-                        label="Tên tài khoản hoặc Email"
-                        placeholder="Nhập tên tài khoản hoặc địa chỉ Email"
-                        register={register}
-                        error={errors.username}
-                        name="username"
-                     />
-                     <FormInput
-                        label="Mật khẩu"
-                        type="password"
-                        placeholder="Nhập mật khẩu"
-                        register={register}
-                        error={errors.password}
-                        name="password"
-                     />
+                     {
+                        config.itemList.authFormData[authMode].inputs.map((input, index) => <FormInput {...input} register={register} error={errors[config.itemList.authFormData[authMode].inputs[index].name]} key={index} />)
+                     }
                   </div>
                   <div className="flex justify-between py-6">
-                     <Link to="/passwordforget" className="text-sm text-sky-600">
-                        Quên mật khẩu?
-                     </Link>
-                     <Link to="/register" className="text-sm text-sky-600">
-                        Đăng ký ngay
-                     </Link>
+                     {
+                        authMode === "login" ? <><Link to="/passwordforget" className="text-sm text-sky-600">
+                           Quên mật khẩu?
+                        </Link>
+                           <Link to="/register" className="text-sm text-sky-600">
+                              Đăng ký ngay
+                           </Link></> : <Link to="/login" className="text-sm text-sky-600">
+                           Đã có tài khoản ? Đăng nhập ngay
+                        </Link>
+                     }
                   </div>
                   <div className="text-center">
                      <Button primary text type="submit" className="bg-[#4c70ff] hover:no-underline">
-                        Đăng nhập
+                        {config.itemList.authFormData[authMode].title}
                      </Button>
                   </div>
                </form>

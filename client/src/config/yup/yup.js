@@ -66,6 +66,8 @@ export const schema = {
    address: yup.string().required('Địa chỉ không được bỏ trống'),
    username: yup.string().min(6, 'Tên đăng nhập phải lớn hơn 6 ký tự').required('Tên đăng nhập không được bỏ trống'),
    password: yup.string().min(6, 'Mật khẩu phải lớn hơn 6 ký tự').required('Mật khẩu không được bỏ trống'),
+   email: yup.string().matches(regex.email, 'Địa chỉ Email không hợp lệ').required('Địa chỉ không được bỏ trống'),
+   retypepassword: yup.string().oneOf([yup.ref('password'), null], 'Nhập lại mật khẩu mới không khớp').required('Mật khẩu mới không được bỏ trống'),
 };
 
 export const createYupSchema = (obj) => {

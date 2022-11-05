@@ -1,5 +1,3 @@
-import PropTypes from 'prop-types';
-
 import styles from './HomePostContainer.module.scss';
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';

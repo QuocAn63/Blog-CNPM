@@ -1,12 +1,9 @@
 let mongoose = require('mongoose')
 
 const userDetailSchema = new mongoose.Schema({
-    _id: {
-        type: ObjectId
-    },
     userId: {
-        type: ObjectId,
-        ref: user
+        type: mongoose.Schema.Types.Mixed,
+        ref: 'user'
     },
     fullname: {
         type: String,

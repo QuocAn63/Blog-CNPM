@@ -1,30 +1,27 @@
 let mongoose = require('mongoose')
 
 const userMetaSchema = new mongoose.Schema({
-        _id: {
-            type: ObjectId
-        },
         userId: {
-            type: ObjectId,
-            ref: user
+            type: mongoose.Schema.Types.Mixed,
+            ref: 'user'
         },
         posts: [{
-            type: ObjectId,
-            ref: post
+            type: mongoose.Schema.Types.Mixed,
+            ref: 'post'
         }],
         questions: [{
-            type: ObjectId,
-            ref: question
+            type: mongoose.Schema.Types.Mixed,
+            ref: 'question'
         }],
         // Users who followed this user
         followers: [{
-            type: ObjectId,
-            ref: user   
+            type: mongoose.Schema.Types.Mixed,
+            ref: 'user'   
         }],
         // Users who were followed by this user
         followings: [{
-            type: ObjectId,
-            ref: user   
+            type: mongoose.Schema.Types.Mixed,
+            ref: 'user'   
         }],
 })
 

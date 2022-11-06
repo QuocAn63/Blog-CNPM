@@ -25,7 +25,7 @@ import FakeData from '~/FakeData';
 function Header() {
    // eslint-disable-next-line no-unused-vars
    const [notifies, setNotifies] = useState(FakeData.Notify);
-   const isLoggedIn = false;
+   const isLoggedIn = true;
 
    const AccountActionMenu = useCallback((username) => {
       return [
@@ -118,7 +118,7 @@ function Header() {
                                  title="Đăng xuất"
                                  icon={faArrowRightFromBracket}
                                  horizontal
-                              // onClick={handleLogout}
+                                 // onClick={handleLogout}
                               />
                            </div>
                         )}

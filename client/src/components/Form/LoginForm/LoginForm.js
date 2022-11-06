@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import FormInput from './FormInput';
+import FormInput from '../FormInput';
 import { useForm } from 'react-hook-form';
-import Button from '../Button';
+import Button from '../../Button';
 import { yupResolver } from '@hookform/resolvers/yup';
 import config from '~/config';
 import { Link } from 'react-router-dom';

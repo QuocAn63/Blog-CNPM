@@ -2,6 +2,7 @@ import config from '~/config';
 
 // Layout
 import { DefaultSidebarless } from '~/layout';
+import FullScreen from '~/layout/FullScreen';
 
 // Sidebar
 import { PostSidebar } from '~/layout/components/Sidebar';
@@ -14,6 +15,7 @@ import DiscussionsPage from '~/pages/Discussions';
 import PostPage from '~/pages/Post';
 import QuestionPage from '~/pages/Question';
 import LoginPage from '~/pages/Login';
+import PublishPage from '~/pages/Publish';
 
 const publicRoutes = [
    {
@@ -87,6 +89,21 @@ const publicRoutes = [
       path: config.routes.register,
       component: LoginPage,
       layout: null,
+   },
+   {
+      path: config.routes.publish,
+      component: PublishPage,
+      layout: FullScreen,
+      subPath: [
+         {
+            path: 'post',
+            component: PublishPage,
+         },
+         {
+            path: 'question',
+            component: PublishPage,
+         },
+      ],
    },
 ];
 

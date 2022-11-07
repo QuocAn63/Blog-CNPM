@@ -23,6 +23,6 @@ const tagSchema = new mongoose.Schema({
         type: ObjectId,
         ref: question
     }],
-}, {timeStamp: true})
+}, {timestamps: true})
 
 module.exports = mongoose.model('tag',tagSchema)

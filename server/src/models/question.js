@@ -48,6 +48,6 @@ const questionSchema = new mongoose.Schema({
         type: String,
         enum: ['available', 'hidden', 'deleted']
     },
-}, {timeStamp: true})
+}, {timestamps: true})
 
 module.exports = mongoose.model('question',questionSchema)

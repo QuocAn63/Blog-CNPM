@@ -7,5 +7,5 @@ const userController = require('../controllers/UserController');
 
 router.get('/:username', userController.get);
 router.put('/update/:username', authorization, userController.update)
-
+router.put('/changepassword/:username', authorization, userController.changePassword)
 module.exports = router;

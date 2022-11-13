@@ -1,8 +1,10 @@
 const apiResponse = require('../config/response')
 const user = require('../models/user')
+const bcrypt = require("bcrypt");
 const UserSchema = require('../models/user')
 const UserDetailSchema = require('../models/userDetail')
 const { getUserInformation } = require('./pipeline/user.pipeline')
+const { body, validationResult, sanitizeBody } = require("express-validator");
 
 exports.get = (req, res) => {
     const username = req.params.username
@@ -62,6 +64,89 @@ exports.update = (req, res) => {
         return apiResponse.unauthorizedError(res, 'You don\'t have permission to update information of another user')
     }
 }
+
+
+//change password
+exports.changePassword = [
+    body("password")
+    .isLength({ min: 6 })
+    .trim()
+    .withMessage("Password must be 6 characters or greater"),
+    body("req.body.newpassword")
+    .isLength({ min: 6 })
+    .trim()
+    .withMessage("Password must be 6 characters or greater"),
+    body("req.body.newpassword2")
+    .isLength({ min: 6 })
+    .trim()
+    .withMessage("Password must be 6 characters or greater"),
+
+    (req, res) => {
+        const isAuthenticated = req.user.username === req.body.username
+        if (isAuthenticated) {
+            let errorMessage = {
+                validateError: [],
+                serverError: []
+            }
+    
+            // bla bla
+            UserSchema.findOne({ username: req.body.username }).exec((error, user) => {
+                bcrypt.compare(
+                    req.body.password,
+                    user.password,
+                    function (error, result) { 
+                            if(result == true){
+                                if(req.body.newpassword == req.body.confirm){
+                                    if(req.body.newpassword == req.body.password){
+                                        return apiResponse.unauthorizedError(
+                                            res,
+                                            "Your new password is the same as your old password"
+                                          );
+                                    }
+                                    else{
+                                        bcrypt.hash(req.body.newpassword, 10, function (error, hash) {
+                                            UserSchema.updateOne({ username: req.body.username}, { password: hash}, (error, value) => {
+                                                if (error)
+                                                    return apiResponse.error(res, 'Change password failed', error)
+                                                console.log(value)
+                                                return apiResponse.success(res, 'Change password successfully')
+                                            })
+                                        });
+                                    }                                   
+                                }
+                                else {
+                                    return apiResponse.unauthorizedError(
+                                      res,
+                                      "New Password and Confirm Password Not Match"
+                                    );
+                                }
+                            }
+                            else {
+                                return apiResponse.unauthorizedError(
+                                  res,
+                                  "Wrong Username or Password"
+                                );
+                            }
+                     });
+
+                if (error)
+                    errorMessage.serverError.push(error)
+            })
+ 
+        } else {
+            return apiResponse.unauthorizedError(res, 'You don\'t have permission to update information of another user')
+        }
+        
+    }
+    
+] 
+
+
+
+
+
+
+
 
 
 const findWithCallback = (_id, res, callback) => {

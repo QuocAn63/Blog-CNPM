@@ -1,6 +1,7 @@
 import * as yup from 'yup';
 import regex from '../regex';
 import { isDate, parse } from 'date-fns';
+import config from '..';
 
 function parseDateString(value, originalValue) {
    return isDate(originalValue) ? originalValue : parse(originalValue, 'MM-dd-yyyy', new Date());
@@ -50,6 +51,7 @@ function parseDateString(value, originalValue) {
 // });
 
 export const schema = {
+   postTitle: yup.string().required('Tiêu đề bài viết không được bỏ trống'),
    fullname: yup.string().min(5, 'Tên hiển thị phải nhiều hơn 5 ký tự').required('Tên hiển thị không được bỏ trống'),
    dob: yup
       .date()
@@ -70,6 +72,11 @@ export const schema = {
    retypepassword: yup.string().oneOf([yup.ref('password'), null], 'Nhập lại mật khẩu mới không khớp').required('Mật khẩu mới không được bỏ trống'),
 };
 
-export const createYupSchema = (obj) => {
+export const createYupSchema = (array) => {
+   let obj = array.reduce(
+      (prev, cur) => ({ ...prev, [cur]: config.yub.schema[cur] }),
+      {},
+   )
+
    return yup.object(obj);
 };

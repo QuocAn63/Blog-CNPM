@@ -14,7 +14,7 @@ function StickySidebarContainer({ title, data }) {
       case 'post':
          Comp = PostSidebarItem;
          break;
-      case 'author':
+      case 'user':
          Comp = AuthorSidebarItem;
          break;
    }

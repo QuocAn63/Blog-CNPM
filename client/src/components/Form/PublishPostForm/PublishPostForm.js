@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import FormInput from '../FormInput';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import config from '~/config';
 import Button from '~/components/Button';
-
+import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
+import { Wrapper } from '~/components/Popper'
+import HeadlessTippy from '@tippyjs/react/headless';
+import PublishMenu from './PublishMenu';
+import Editor from './Editor';
 function PublishPostForm() {
    const { createYupSchema } = config.yub;
    const { register } = useForm({ resolver: yupResolver(createYupSchema(['postTitle'])) });
@@ -17,9 +21,20 @@ function PublishPostForm() {
                <div className="flex-1">
                   <FormInput register={register} name="tag" placeholder="Nhập chủ đề bài viết ( Tối thiểu 1 chủ đề )" />
                </div>
-               <Button className="bg-white border-gray-300 text-gray-400 mt-6" outline>
-                  Lưu bài viết
-               </Button>
+               <HeadlessTippy
+                  trigger="click"
+                  placement='bottom-end'
+                  interactive
+                  animation={false}
+                  render={() => (<Wrapper ><PublishMenu /></Wrapper>)}
+               >
+                  <Button className="bg-white border-gray-300 text-gray-400 mt-6" outline rightIcon={faAngleDown}>
+                     Xuất bản
+                  </Button>
+               </HeadlessTippy>
+            </div>
+            <div className="mt-4">
+               <Editor />
             </div>
          </div>
       </div>

@@ -1,4 +1,4 @@
-export const author = {
+export const user = {
     username: 'caoquocan',
     fullname: 'Cao Quốc Ân',
     avatar: '',

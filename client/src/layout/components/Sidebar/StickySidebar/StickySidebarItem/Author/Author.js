@@ -8,15 +8,15 @@ import UserSidebar from '~/layout/components/Sidebar/UserSidebar';
 const cx = classNames.bind(styles);
 
 function AuthorSidebarItem({ data }) {
-   const { author } = data;
-   const meta = Object.keys(author.meta).map((key) => ({
+   const { user } = data;
+   const meta = Object.keys(user.meta).map((key) => ({
       title: key,
-      value: author.meta[key],
+      value: user.meta[key],
    }));
 
    return (
       <div className={cx('wrapper') + ' py-2'}>
-         <UserSidebar {...author} />
+         <UserSidebar {...user} />
          <div className="flex items-center gap-5 my-2">
             {meta.map((item, index) => (
                <MetaItem key={index} title={item.title} content={item.value} />

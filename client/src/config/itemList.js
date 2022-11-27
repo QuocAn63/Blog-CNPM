@@ -1,4 +1,4 @@
-import { faPen, faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
+import { faPen, faPlus } from '@fortawesome/free-solid-svg-icons';
 
 const GlobalNavList = [
    {
@@ -11,12 +11,8 @@ const GlobalNavList = [
       path: '/posts',
    },
    {
-      title: 'Hỏi đáp',
-      path: '/questions',
-   },
-   {
-      title: 'Thảo luận',
-      path: '/discussions',
+      title: 'Series',
+      path: '/series',
    },
 ];
 
@@ -45,7 +41,68 @@ const PostsNavList = {
    path: '/publish/post',
 };
 
-const QuestionsNavList = {
+const ProfileNavList = [
+   {
+      name: 'Bài đăng',
+      path: '',
+      exact: true,
+   },
+   {
+      name: 'Series',
+      path: 'series',
+   },
+   {
+      name: 'Thẻ',
+      path: 'tags',
+   },
+   {
+      name: "Bookmarks",
+      path: "bookmarks"
+   },
+   {
+      name: "Đang theo dõi",
+      path: "followings"
+   },
+   {
+      name: "Người theo dõi",
+      path: "followers"
+   }
+]
+
+const ProfileSidebarList = [
+   {
+      name: 'Bài đăng',
+      path: '',
+      value: 0
+   },
+   {
+      name: 'Series',
+      path: 'series',
+      value: 0
+   },
+   {
+      name: 'Thẻ',
+      path: 'tags',
+      value: 0
+   },
+   {
+      name: "Bookmarks",
+      path: "bookmarks",
+      value: 0
+   },
+   {
+      name: "Đang theo dõi",
+      path: "followings",
+      value: 0
+   },
+   {
+      name: "Người theo dõi",
+      path: "followers",
+      value: 0
+   }
+]
+
+const SeriesNavList = {
    list: [
       {
          name: 'Đang theo dõi',
@@ -57,17 +114,17 @@ const QuestionsNavList = {
          path: 'newest',
       },
       {
-         name: 'Chưa giải quyết',
-         path: 'unsolved',
+         name: 'Đánh giá cao',
+         path: 'ratings',
       },
       {
          name: 'Bookmarks của tôi',
          path: 'bookmarks',
       },
    ],
-   title: 'Đặt câu hỏi',
-   icon: faQuestionCircle,
-   path: '/publish/question',
+   title: 'Tạo series mới',
+   icon: faPlus,
+   path: '/publish/series',
 };
 
 const authFormData = {
@@ -113,4 +170,13 @@ const authFormData = {
       }]
    }
 }
-export { GlobalNavList, PostsNavList, QuestionsNavList, authFormData };
+
+const MeManagementMenu = [{
+   title: "Bài viết",
+   icon: faPen,
+   children: [
+
+   ]
+}]
+
+export { GlobalNavList, PostsNavList, SeriesNavList, ProfileNavList, ProfileSidebarList, authFormData };

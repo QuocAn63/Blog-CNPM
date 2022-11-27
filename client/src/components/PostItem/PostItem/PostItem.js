@@ -16,7 +16,7 @@ function PostItem(props) {
       <div className={cx('wrapper') + ' px-2 py-4'}>
          <div className="flex items-start w-full gap-4">
             <div>
-               <Link to={'/author/' + user.data.username}>
+               <Link to={'/user/' + user.data.username}>
                   <Image
                      src={user.data.avatar}
                      className="w-10 h-10 rounded-full object-cover border border-slate-200"

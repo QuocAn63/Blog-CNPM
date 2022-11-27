@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 import Button from '~/components/Button';
 import config from '~/config';
@@ -12,15 +12,18 @@ import {
    faBell,
    faFileLines,
    faGear,
+   faHistory,
+   faListUl,
+   faPen,
    faPenToSquare,
    faUser,
 } from '@fortawesome/free-solid-svg-icons';
-import Tippy from '@tippyjs/react/';
 import Image from '~/components/Image';
 import 'tippy.js/dist/tippy.css';
 import AccountMenu from '~/layout/components/AccountMenu';
 
 import FakeData from '~/FakeData';
+import { Wrapper } from '~/components/Popper';
 
 function Header() {
    // eslint-disable-next-line no-unused-vars
@@ -37,13 +40,14 @@ function Header() {
          {
             title: 'Quản lý nội dung',
             icon: faFileLines,
-            path: '/myposts',
+            path: '/me',
          },
          {
-            title: 'Tuỳ chỉnh',
-            icon: faGear,
-            path: '/settings',
+            title: "Lịch sử hoạt động",
+            icon: faHistory,
+            path: '/history'
          },
+
       ];
    }, []);
 
@@ -98,11 +102,34 @@ function Header() {
                            <FontAwesomeIcon icon={faBell} />
                         </Button>
                      </HeadlessTippy>
-                     <Tippy content="Viết bài">
-                        <Button primary to="/publish/post" className="w-10 h-10">
+                     <HeadlessTippy
+                        content="Viết"
+                        trigger='click'
+                        interactive
+                        animation={false}
+                        render={() =>
+                        (<Wrapper>
+                           <ul>
+                              <li>
+                                 <Link to="/pulish/post" className="block text-sm text-gray-600 px-3 py-2 hover:text-sky-600">
+                                    <FontAwesomeIcon icon={faPen} className="mr-2" />
+                                    Viết bài
+                                 </Link>
+                              </li>
+                              <li>
+                                 <Link to="/pulish/series" className="block text-sm text-gray-600 px-3 py-2 hover:text-sky-600">
+                                    <FontAwesomeIcon icon={faListUl} className="mr-2" />
+                                    Tạo series mới
+                                 </Link>
+                              </li>
+                           </ul>
+                        </Wrapper>)
+                        }
+                     >
+                        <Button primary className="w-10 h-10">
                            <FontAwesomeIcon icon={faPenToSquare} />
                         </Button>
-                     </Tippy>
+                     </HeadlessTippy>
                      <HeadlessTippy
                         trigger="click"
                         interactive
@@ -110,7 +137,7 @@ function Header() {
                         appendTo={document.body}
                         animation={false}
                         render={() => (
-                           <div className="w-56 bg-white rounded shadow">
+                           <div className="w-56 bg-white rounded shadow border border-gray-200">
                               {AccountActionMenu('caoan632002').map((item, index) => (
                                  <AccountMenu title={item.title} to={item.path} icon={item.icon} key={index} />
                               ))}
@@ -118,7 +145,7 @@ function Header() {
                                  title="Đăng xuất"
                                  icon={faArrowRightFromBracket}
                                  horizontal
-                                 // onClick={handleLogout}
+                              // onClick={handleLogout}
                               />
                            </div>
                         )}

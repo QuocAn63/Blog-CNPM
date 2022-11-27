@@ -24,7 +24,7 @@ function Footer() {
                 <Link to="/tags" className="block text-white">Tags</Link>
               </li>
               <li className="basis-1/2 mb-4">
-                <Link to="/authors" className="block text-white">Tác giả</Link>
+                <Link to="/users" className="block text-white">Tác giả</Link>
               </li>
             </ul>
           </div>

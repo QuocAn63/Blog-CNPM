@@ -1,0 +1,13 @@
+.link {
+   display: block;
+   transition: width 0.3s ease;
+
+   &.active {
+      border-bottom: 2px solid rgb(3 105 161);
+      transition: width 0.3s ease;
+   }
+
+   &:hover::after {
+      width: 100%;
+   }
+}

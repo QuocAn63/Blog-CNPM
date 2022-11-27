@@ -1,3 +1,3 @@
 import FeedBar from "./FeedBar";
-
-export { FeedBar }
+import ProfileFeedbar from "./ProfileFeedbar";
+export { FeedBar, ProfileFeedbar } 

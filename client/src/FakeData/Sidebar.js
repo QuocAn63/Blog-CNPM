@@ -10,7 +10,7 @@ const Posts = {
                reply: 0,
                comments: 0,
             },
-            author: {
+            user: {
                fullname: 'Phạm Duy Vũ',
                username: 'binchanhkun99',
             },
@@ -25,7 +25,7 @@ const Posts = {
                reply: 0,
                comments: 0,
             },
-            author: {
+            user: {
                fullname: 'Phạm Duy Vũ',
                username: 'binchanhkun99',
             },
@@ -40,7 +40,7 @@ const Posts = {
                reply: 0,
                comments: 0,
             },
-            author: {
+            user: {
                fullname: 'Phạm Duy Vũ',
                username: 'binchanhkun99',
             },
@@ -50,10 +50,10 @@ const Posts = {
 };
 
 const Authors = {
-   type: 'author',
+   type: 'user',
    list: [
       {
-         author: {
+         user: {
             username: 'binchanhkun99',
             fullname: 'Phạm Duy Vũ',
             avatar: '',
@@ -66,7 +66,7 @@ const Authors = {
          },
       },
       {
-         author: {
+         user: {
             username: 'binchanhkun99',
             fullname: 'Phạm Duy Vũ',
             avatar: '',
@@ -79,7 +79,7 @@ const Authors = {
          },
       },
       {
-         author: {
+         user: {
             username: 'binchanhkun99',
             fullname: 'Phạm Duy Vũ',
             avatar: '',

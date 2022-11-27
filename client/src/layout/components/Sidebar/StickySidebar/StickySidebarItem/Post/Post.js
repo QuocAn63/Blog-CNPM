@@ -24,8 +24,8 @@ function PostSidebarItem({ data }) {
                <MetaItem key={index} title={item.title} content={item.value} />
             ))}
          </div>
-         <Link to={'/author/' + post.author.username} className="text-sm text-gray-500 hover:text-gray-900">
-            {post.author.fullname}
+         <Link to={'/user/' + post.user.username} className="text-sm text-gray-500 hover:text-gray-900">
+            {post.user.fullname}
          </Link>
       </div>
    );

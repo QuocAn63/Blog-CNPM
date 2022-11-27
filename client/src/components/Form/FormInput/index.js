@@ -1,7 +1,6 @@
 import React from 'react';
 
 function FormInput({ label, register, error, ...props }) {
-   console.log(register);
    return (
       register && (
          <div className="mt-6 relative">

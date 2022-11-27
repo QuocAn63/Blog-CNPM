@@ -20,13 +20,13 @@ function CommentItem(props) {
    return (
       <div className={cx('wrapper')}>
          <div className="flex items-center">
-            <Link to={`/author/${user.data.username}`} className="inline-block mx-3">
+            <Link to={`/user/${user.data.username}`} className="inline-block mx-3">
                <Image src="" className="w-10 h-10 rounded-full" />
             </Link>
             <div className="text-sm leading-6">
                <div>
                   <Link
-                     to={`/author/${user.data.username}`}
+                     to={`/user/${user.data.username}`}
                      className="inline-block font-bold text-sky-600 hover:underline"
                   >
                      {user.data.fullname}

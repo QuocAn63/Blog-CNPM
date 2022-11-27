@@ -4,7 +4,7 @@ import FakeData from '~/FakeData';
 import MetaItem from '~/components/MetaItem';
 
 function PostSidebar(props) {
-   const { points, followers, posts, questions } = FakeData.Authors.author;
+   const { points, followers, posts, questions } = FakeData.Authors.user;
    let meta = { points, followers, posts, questions };
    meta = Object.keys(meta).map((key) => ({
       title: key,
@@ -14,7 +14,7 @@ function PostSidebar(props) {
    return (
       <div>
          <div className="bg-white rounded shadow p-5">
-            <UserSidebar {...FakeData.Authors.author} />
+            <UserSidebar {...FakeData.Authors.user} />
             <div className="mt-3">
                <div className="flex items-center gap-10 w-full">
                   {meta.map((item, index) => (

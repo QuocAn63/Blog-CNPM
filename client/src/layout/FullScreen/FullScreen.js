@@ -1,5 +1,4 @@
 import React from 'react';
-import Footer from '../partials/Footer';
 import Header from '../partials/Header';
 
 function FullScreen({ children }) {
@@ -7,9 +6,8 @@ function FullScreen({ children }) {
       <>
          <Header />
          <div className="mt-32">
-            <div className="max-w-screen-xl m-auto">{children}</div>
+            <div className="max-w-screen-2xl m-auto">{children}</div>
          </div>
-         <Footer />
       </>
    );
 }

@@ -10,11 +10,11 @@ const cx = classNames.bind(styles);
 function User({ username, fullname, avatar }) {
    return (
       <>
-         <Link to={'/author/' + username} className="mr-4">
+         <Link to={'/user/' + username} className="mr-4">
             <Image src="/" className="w-8 h-8 rounded-full object-cover" />
          </Link>
          <div className="basis-[8vw] mr-4 overflow-hidden whitespace-nowrap text-ellipsis">
-            <Link to={'/author/' + username} className="mr-4 text-sm text-sky-600 hover:text-sky-800 hover:underline">
+            <Link to={'/user/' + username} className="mr-4 text-sm text-sky-600 hover:text-sky-800 hover:underline">
                {fullname}
             </Link>
          </div>

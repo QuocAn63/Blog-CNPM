@@ -28,7 +28,7 @@ function QuestionItem(props) {
                <div>
                   <Link
                      className="text-sky-600 hover:underline text-sm hover:text-sky-800"
-                     to={`/author/${user.data.username}`}
+                     to={`/user/${user.data.username}`}
                   >
                      {user.data.fullname}
                   </Link>

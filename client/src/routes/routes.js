@@ -10,12 +10,14 @@ import { PostSidebar } from '~/layout/components/Sidebar';
 // Pages
 import HomePage from '~/pages/Home';
 import PostsPage from '~/pages/Posts';
-import QuestionsPage from '~/pages/Questions';
+import SeriesPage from '~/pages/Series';
 import DiscussionsPage from '~/pages/Discussions';
 import PostPage from '~/pages/Post';
-import QuestionPage from '~/pages/Question';
+import SeriesItemPage from '~/pages/SeriesItem';
 import LoginPage from '~/pages/Login';
 import PublishPage from '~/pages/Publish';
+import ProfilePage from '~/pages/Profile'
+import PostManagementPage from '~/pages/PostManagement';
 
 const publicRoutes = [
    {
@@ -43,25 +45,21 @@ const publicRoutes = [
       ],
    },
    {
-      path: config.routes.questions,
-      component: QuestionsPage,
-      feedbar: config.itemList.QuestionsNavList,
+      path: config.routes.series,
+      component: SeriesPage,
+      feedbar: config.itemList.SeriesNavList,
       subPath: [
          {
-            path: 'unsolved',
-            component: QuestionsPage,
+            path: 'followings',
+            component: PostsPage,
          },
          {
             path: 'newest',
-            component: QuestionsPage,
+            component: PostsPage,
          },
          {
             path: 'bookmarks',
-            component: QuestionsPage,
-         },
-         {
-            path: 'followings',
-            component: QuestionsPage,
+            component: PostsPage,
          },
       ],
    },
@@ -76,8 +74,8 @@ const publicRoutes = [
       Sidebar: PostSidebar,
    },
    {
-      path: config.routes.question,
-      component: QuestionPage,
+      path: config.routes.seriesItem,
+      component: SeriesItemPage,
       Sidebar: PostSidebar,
    },
    {
@@ -100,11 +98,21 @@ const publicRoutes = [
             component: PublishPage,
          },
          {
-            path: 'question',
+            path: 'series',
             component: PublishPage,
          },
       ],
    },
+   {
+      path: config.routes.user,
+      component: ProfilePage,
+      layout: FullScreen,
+   },
+   {
+      path: config.routes.me,
+      component: PostManagementPage,
+      layout: DefaultSidebarless,
+   }
 ];
 
 export { publicRoutes };

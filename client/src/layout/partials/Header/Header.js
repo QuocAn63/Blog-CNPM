@@ -28,7 +28,7 @@ import { Wrapper } from '~/components/Popper';
 function Header() {
    // eslint-disable-next-line no-unused-vars
    const [notifies, setNotifies] = useState(FakeData.Notify);
-   const isLoggedIn = true;
+   const isLoggedIn = false;
 
    const AccountActionMenu = useCallback((username) => {
       return [
@@ -160,10 +160,10 @@ function Header() {
                ) : (
                   <>
                      <Button primary text to="/login">
-                        Log in
+                        Đăng nhập
                      </Button>
                      <Button outline text to="/register">
-                        Register
+                        Đăng ký  
                      </Button>
                   </>
                )}

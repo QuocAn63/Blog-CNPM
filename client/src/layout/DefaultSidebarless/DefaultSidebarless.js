@@ -4,13 +4,13 @@ import Header from '../partials/Header';
 
 function DefaultSidebarless({ children }) {
    return (
-      <>
+      <div className="flex flex-col min-h-screen">
          <Header />
-         <div className="mt-32">
-            <div className="max-w-screen-sm xl:max-w-screen-xl m-auto">{children}</div>
+         <div className="mt-32 flex-1">
+            <div className="max-w-screen-sm xl:max-w-screen-xl m-auto min-h[]">{children}</div>
          </div>
          <Footer />
-      </>
+      </div>
    );
 }
 

@@ -15,6 +15,7 @@ import {
    faUserPlus,
 } from '@fortawesome/free-solid-svg-icons';
 import { forwardRef, memo } from 'react';
+import { faPaste } from '@fortawesome/free-regular-svg-icons';
 
 const metaInformations = {
    bookmarks: {
@@ -61,6 +62,10 @@ const metaInformations = {
       title: 'Báo cáo',
       icon: faFlag,
    },
+   postsSeries: {
+      title: "Số bài viết",
+      icon: faPaste
+   }
 };
 
 const Item = forwardRef(({ content, icon, onClick, className }, ref) => {

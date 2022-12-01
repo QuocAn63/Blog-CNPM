@@ -18,6 +18,8 @@ import LoginPage from '~/pages/Login';
 import PublishPage from '~/pages/Publish';
 import ProfilePage from '~/pages/Profile'
 import PostManagementPage from '~/pages/PostManagement';
+import SearchPage from '~/pages/Search';
+import NotificationsPage from '~/pages/Notifications'
 
 const publicRoutes = [
    {
@@ -112,7 +114,18 @@ const publicRoutes = [
       path: config.routes.me,
       component: PostManagementPage,
       layout: DefaultSidebarless,
+   },
+   {
+      path: config.routes.search,
+      component: SearchPage,
+      layout: DefaultSidebarless
+   },
+   {
+      path: config.routes.notifications,
+      component: NotificationsPage,
+      layout: DefaultSidebarless
    }
+
 ];
 
 export { publicRoutes };

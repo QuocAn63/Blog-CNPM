@@ -1,0 +1,11 @@
+.wrapper {
+   background-color: white;
+
+   &.not_seen {
+      background-color: rgba(64, 158, 255, 0.1);
+   }
+
+   & b {
+      color: #5488c7;
+   }
+}

@@ -1,4 +1,5 @@
-import { faPen, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faBookmark } from '@fortawesome/free-regular-svg-icons';
+import { faEarthAmerica, faList, faLock, faPen, faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 const GlobalNavList = [
    {
@@ -40,6 +41,16 @@ const PostsNavList = {
    icon: faPen,
    path: '/publish/post',
 };
+
+const SearchNavList = [{
+   name: "Bài đăng",
+   type: "post"
+},
+{
+   name: "Người dùng",
+   type: "user"
+}]
+
 
 const ProfileNavList = [
    {
@@ -171,12 +182,69 @@ const authFormData = {
    }
 }
 
-const MeManagementMenu = [{
+const searchFilterList = [{
+   title: "Phù hợp nhất",
+   sort: "score"
+}, {
+   title: "Lượt bookmark giảm dần",
+   sort: "bookmark"
+}, {
+   title: "Lượt vote giảm dần",
+   sort: "rating"
+}, {
+   title: "Lượt bình luận giảm dần",
+   sort: "comments"
+}, {
+   title: "Mới nhất",
+   sort: "created",
+   order: "desc"
+}, {
+   title: "Cũ nhất",
+   sort: "created",
+   order: "asc"
+}]
+
+const PostManagementMenu = [{
    title: "Bài viết",
    icon: faPen,
    children: [
-
+      {
+         title: "Bản nháp",
+         icon: faLock,
+         to: "/me/posts/draft"
+      },
+      {
+         title: "Công khai",
+         icon: faEarthAmerica,
+         to: "/me/posts/public"
+      }
    ]
+},
+{
+   title: "Series",
+   icon: faList,
+   to: "/me/series"
+},
+{
+   title: "Bookmark của tôi",
+   icon: faBookmark,
+   children: [
+      {
+         title: "Bài viết",
+         icon: faPen,
+         to: "/me/bookmarks/posts"
+      },
+      {
+         title: "Series",
+         icon: faList,
+         to: "/me/bookmarks/series"
+      }
+   ]
+},
+{
+   title: "Vi phạm",
+   icon: faTrash,
+   to: "/me/violations"
 }]
 
-export { GlobalNavList, PostsNavList, SeriesNavList, ProfileNavList, ProfileSidebarList, authFormData };
+export { GlobalNavList, PostsNavList, SeriesNavList, ProfileNavList, ProfileSidebarList, authFormData, SearchNavList, searchFilterList, PostManagementMenu };

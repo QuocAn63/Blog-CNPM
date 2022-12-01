@@ -1,1 +1,1 @@
-export { default as MeManagementMenu } from './MeManagementMenu'
+export { default as PostManagementMenu } from './PostManagementMenu'

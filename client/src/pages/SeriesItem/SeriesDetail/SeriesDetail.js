@@ -4,14 +4,12 @@ import { PostContainer } from '~/components/PostContainer';
 import { SeriesItem } from '~/components/PostItem';
 import { TagContainer } from '~/components/Tag';
 import fakeData from '~/FakeData';
+import { useMarkupHTML } from '~/hooks';
 import PostControllerSidebar from '~/layout/components/PostControllerSidebar';
-
-function createMarkup(content) {
-   return { __html: content };
-}
 
 function SeriesDetail(props) {
    const { title, content, tags, bookmarks, comments, publishedAt } = props;
+   const htmlContent = useMarkupHTML(content)
 
    return (
       <div className="flex">
@@ -34,7 +32,7 @@ function SeriesDetail(props) {
                <p className="font-bold text-2xl">{title}</p>
             </div>
             <div className="py-5">
-               <div dangerouslySetInnerHTML={createMarkup(content)}></div>
+               <div dangerouslySetInnerHTML={htmlContent}></div>
             </div>
             <div className="py-5">
                <div className="flex items-center"><p className="font-bold uppercase text-large">Nội dung</p><div className="ml-3 flex-1 h-[1px] bg-gray-200"></div></div>

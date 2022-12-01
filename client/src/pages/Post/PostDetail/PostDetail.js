@@ -1,14 +1,12 @@
 import React from 'react';
 import MetaItem from '~/components/MetaItem';
 import { TagContainer } from '~/components/Tag';
+import { useMarkupHTML } from '~/hooks';
 import PostControllerSidebar from '~/layout/components/PostControllerSidebar';
-
-function createMarkup(content) {
-   return { __html: content };
-}
 
 function PostDetail(props) {
    const { title, content, tags } = props;
+   const htmlContent = useMarkupHTML(content)
 
    return (
       <div className="flex">
@@ -27,7 +25,7 @@ function PostDetail(props) {
                <p className="font-bold text-4xl">{title}</p>
             </div>
             <div className="py-5">
-               <div dangerouslySetInnerHTML={createMarkup(content)}></div>
+               <div dangerouslySetInnerHTML={htmlContent}></div>
             </div>
             <div className="py-5">
                <TagContainer tags={tags} />

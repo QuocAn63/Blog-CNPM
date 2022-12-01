@@ -11,7 +11,6 @@ import {
    faArrowRightFromBracket,
    faBell,
    faFileLines,
-   faGear,
    faHistory,
    faListUl,
    faPen,
@@ -28,7 +27,7 @@ import { Wrapper } from '~/components/Popper';
 function Header() {
    // eslint-disable-next-line no-unused-vars
    const [notifies, setNotifies] = useState(FakeData.Notify);
-   const isLoggedIn = false;
+   const isLoggedIn = true;
 
    const AccountActionMenu = useCallback((username) => {
       return [
@@ -91,9 +90,9 @@ function Header() {
                                  )}
                               </div>
                               {notifies.length > 0 && (
-                                 <button className="block w-full cursor-pointer py-3 text-white bg-sky-600 font-semibold outline-none border-none">
+                                 <Link to="/notifications" className="block text-center w-full cursor-pointer py-3 text-white bg-sky-600 font-semibold outline-none border-none">
                                     Xem tất cả
-                                 </button>
+                                 </Link>
                               )}
                            </div>
                         )}
@@ -163,7 +162,7 @@ function Header() {
                         Đăng nhập
                      </Button>
                      <Button outline text to="/register">
-                        Đăng ký  
+                        Đăng ký
                      </Button>
                   </>
                )}

@@ -1,0 +1,11 @@
+.wrapper {
+   .submenu {
+      display: none;
+   }
+
+   .has_submenu {
+      &.show .submenu {
+         display: block;
+      }
+   }
+}

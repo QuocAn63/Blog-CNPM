@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { PostSidebarItem, AuthorSidebarItem } from '../StickySidebarItem';
+import { PostSidebarItem, AuthorSidebarItem, SeriesSidebarItem } from '../StickySidebarItem';
 import styles from './StickySidebarContainer.module.scss';
 import classNames from 'classnames/bind';
 
@@ -13,6 +13,9 @@ function StickySidebarContainer({ title, data }) {
    switch (data.type) {
       case 'post':
          Comp = PostSidebarItem;
+         break;
+      case 'series':
+         Comp = SeriesSidebarItem;
          break;
       case 'user':
          Comp = AuthorSidebarItem;
@@ -32,7 +35,7 @@ function StickySidebarContainer({ title, data }) {
          </div>
          <div>
             {data.list.map((item, index) => (
-               <Comp data={item} key={index} />
+               <Comp {...item} key={index} />
             ))}
          </div>
       </div>

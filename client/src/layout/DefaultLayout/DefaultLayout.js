@@ -1,5 +1,5 @@
 import React from 'react';
-import { FeedBar } from '~/components/Filter';
+import { FeedBar } from '~/layout/components/Filter';
 import { GlobalStickySidebar } from '~/layout/components/Sidebar';
 import Footer from '../partials/Footer';
 import Header from '../partials/Header';
@@ -8,9 +8,9 @@ function DefaultLayout({ children, ...props }) {
    const { feedbar, sidebar: Sidebar } = props;
 
    return (
-      <>
+      <div className="flex flex-col min-h-screen">
          <Header />
-         <div className="mt-32">
+         <div className="mt-32 flex-1">
             <div className="max-w-screen-xl m-auto">
                {feedbar && <FeedBar {...feedbar} />}
                <div className="mt-4">
@@ -26,7 +26,7 @@ function DefaultLayout({ children, ...props }) {
             </div>
          </div>
          <Footer />
-      </>
+      </div>
    );
 }
 

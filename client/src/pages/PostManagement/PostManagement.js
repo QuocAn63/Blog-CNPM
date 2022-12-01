@@ -1,13 +1,16 @@
 import React from 'react'
-import { MeManagementMenu } from '~/layout/components/Menu'
+import { PostManagementFilter } from '~/layout/components/Filter'
+import { PostManagementMenu } from '~/layout/components/Menu'
 
 function PostManagement() {
     return (
-        <div className="grid grid-cols-12">
+        <div className="grid grid-cols-12 gap-3">
             <div className="col-span-3">
-                <MeManagementMenu />
+                <PostManagementMenu />
             </div>
-            <div className="col-span-9"></div>
+            <div className="col-span-9">
+                <PostManagementFilter />
+            </div>
         </div>
     )
 }

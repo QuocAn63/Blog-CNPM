@@ -11,7 +11,8 @@ const routes = {
    search: '/search',
    login: '/login',
    register: '/register',
-   me: "/me"
+   me: "/me",
+   notifications: "/notifications"
 };
 
 export default routes;

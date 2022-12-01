@@ -10,7 +10,8 @@ function GlobalStickySidebar({ offsetTop, offsetBottom }) {
          offsetBottom={offsetBottom}
          render={() => (
             <div className=" p-2 max-h-[calc(100vh_-_94px)] overflow-y-hidden hover:overflow-y-scroll">
-               <StickySidebarContainer title="Bài viết mới nhất" data={FakeData.Sidebar.Posts} />
+               <StickySidebarContainer title="Bài viết nổi bậc" data={FakeData.Sidebar.Posts} />
+               <StickySidebarContainer title="Series nổi bậc" data={FakeData.Sidebar.Series} />
                <StickySidebarContainer title="Tác giả nổi bậc" data={FakeData.Sidebar.Authors} />
             </div>
          )}

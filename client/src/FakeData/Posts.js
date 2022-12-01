@@ -10,15 +10,15 @@ export const posts = [
       created_at: '',
       updated_at: '',
       user: {
-         data: {
-            username: 'caoquocan',
-            fullname: 'Cao Quốc Ân',
-            avatar: '',
-            following: false,
-            followers_count: 0,
-            posts_count: 0,
-            questions_count: 0,
-         },
+
+         username: 'caoquocan',
+         fullname: 'Cao Quốc Ân',
+         avatar: '',
+         following: false,
+         followers_count: 0,
+         posts_count: 0,
+         questions_count: 0,
+
       },
       isSolved: true,
       tags: [
@@ -43,15 +43,13 @@ export const posts = [
       created_at: '',
       updated_at: '',
       user: {
-         data: {
-            username: 'caoquocan',
-            fullname: 'Cao Quốc Ân',
-            avatar: '',
-            following: false,
-            followers_count: 0,
-            posts_count: 0,
-            questions_count: 0,
-         },
+         username: 'caoquocan',
+         fullname: 'Cao Quốc Ân',
+         avatar: '',
+         following: false,
+         followers_count: 0,
+         posts_count: 0,
+         questions_count: 0,
       },
       tags: [
          {
@@ -75,15 +73,15 @@ export const posts = [
       created_at: '',
       updated_at: '',
       user: {
-         data: {
-            username: 'caoquocan',
-            fullname: 'Cao Quốc Ân',
-            avatar: '',
-            following: false,
-            followers_count: 0,
-            posts_count: 0,
-            questions_count: 0,
-         },
+
+         username: 'caoquocan',
+         fullname: 'Cao Quốc Ân',
+         avatar: '',
+         following: false,
+         followers_count: 0,
+         posts_count: 0,
+         questions_count: 0,
+
       },
       tags: [
          {
@@ -119,15 +117,15 @@ export const singlePost = {
    created_at: '',
    updated_at: '',
    user: {
-      data: {
-         username: 'caoquocan',
-         fullname: 'Cao Quốc Ân',
-         avatar: '',
-         following: false,
-         followers_count: 0,
-         posts_count: 0,
-         questions_count: 0,
-      },
+
+      username: 'caoquocan',
+      fullname: 'Cao Quốc Ân',
+      avatar: '',
+      following: false,
+      followers_count: 0,
+      posts_count: 0,
+      questions_count: 0,
+
    },
    comments: [
       {
@@ -137,15 +135,15 @@ export const singlePost = {
          updated_at: '',
          isUpvoted: true,
          user: {
-            data: {
-               username: 'caoquocan',
-               fullname: 'Cao Quốc Ân',
-               avatar: '',
-               following: false,
-               followers_count: 0,
-               posts_count: 0,
-               questions_count: 0,
-            },
+
+            username: 'caoquocan',
+            fullname: 'Cao Quốc Ân',
+            avatar: '',
+            following: false,
+            followers_count: 0,
+            posts_count: 0,
+            questions_count: 0,
+
          },
          replies: [
             {
@@ -154,15 +152,15 @@ export const singlePost = {
                created_at: '',
                updated_at: '',
                user: {
-                  data: {
-                     username: 'caoquocan',
-                     fullname: 'Cao Quốc Ân',
-                     avatar: '',
-                     following: false,
-                     followers_count: 0,
-                     posts_count: 0,
-                     questions_count: 0,
-                  },
+
+                  username: 'caoquocan',
+                  fullname: 'Cao Quốc Ân',
+                  avatar: '',
+                  following: false,
+                  followers_count: 0,
+                  posts_count: 0,
+                  questions_count: 0,
+
                }
             },
             {
@@ -172,15 +170,15 @@ export const singlePost = {
                updated_at: '',
                isUpvoted: true,
                user: {
-                  data: {
-                     username: 'caoquocan',
-                     fullname: 'Cao Quốc Ân',
-                     avatar: '',
-                     following: false,
-                     followers_count: 0,
-                     posts_count: 0,
-                     questions_count: 0,
-                  },
+
+                  username: 'caoquocan',
+                  fullname: 'Cao Quốc Ân',
+                  avatar: '',
+                  following: false,
+                  followers_count: 0,
+                  posts_count: 0,
+                  questions_count: 0,
+
                }
             }
          ]
@@ -212,15 +210,15 @@ export const singleQuestion = {
    created_at: '',
    updated_at: '',
    user: {
-      data: {
-         username: 'caoquocan',
-         fullname: 'Cao Quốc Ân',
-         avatar: '',
-         following: false,
-         followers_count: 0,
-         posts_count: 0,
-         questions_count: 0,
-      },
+
+      username: 'caoquocan',
+      fullname: 'Cao Quốc Ân',
+      avatar: '',
+      following: false,
+      followers_count: 0,
+      posts_count: 0,
+      questions_count: 0,
+
    },
 };
 
@@ -248,14 +246,14 @@ export const singleSeries = {
    created_at: '',
    updated_at: '',
    user: {
-      data: {
-         username: 'caoquocan',
-         fullname: 'Cao Quốc Ân',
-         avatar: '',
-         following: false,
-         followers_count: 0,
-         posts_count: 0,
-         questions_count: 0,
-      },
+
+      username: 'caoquocan',
+      fullname: 'Cao Quốc Ân',
+      avatar: '',
+      following: false,
+      followers_count: 0,
+      posts_count: 0,
+      questions_count: 0,
+
    },
 };

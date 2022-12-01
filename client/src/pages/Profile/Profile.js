@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { ProfileFeedbar } from '~/components/Filter/'
+import { ProfileFeedbar } from '~/layout/components/Filter'
 import { ProfileSidebar } from '~/layout/components/Sidebar'
 import Image from '~/components/Image'
 

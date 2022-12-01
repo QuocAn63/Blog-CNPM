@@ -119,9 +119,10 @@ function Search() {
 
    const handleSearch = () => {
       if (searchValue) {
-         navigate({ pathname: 'search', search: `q=${searchValue}` }, { replace: true });
+         navigate({ pathname: '/search', search: `q=${searchValue}` }, { replace: true });
       }
    };
+
    return (
       <div className="h-16 flex items-center">
          <HeadlessTippy

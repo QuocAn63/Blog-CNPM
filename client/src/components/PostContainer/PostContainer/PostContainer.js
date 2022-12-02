@@ -18,9 +18,15 @@ function PostContainer({ list, Component, pagination = true, span = 12 }) {
             ))}
          </div>
          <div className="mt-5">
-            {
-               pagination && <Pagination totalPageCount={50} onPageChange={changePage} currentPage={20} siblingCount={2} pageSize={10} />
-            }
+            {pagination && (
+               <Pagination
+                  totalPageCount={50}
+                  onPageChange={changePage}
+                  currentPage={20}
+                  siblingCount={2}
+                  pageSize={10}
+               />
+            )}
          </div>
       </>
    );

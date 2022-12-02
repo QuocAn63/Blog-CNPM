@@ -6,11 +6,11 @@ export const posts = [
       points: 4,
       bookmarks_count: 0,
       comments_count: 0,
-      publishedAt: '10 tháng 2 năm 2022',
-      created_at: '',
-      updated_at: '',
+      publishedAt: 'Thứ Bảy, 12:40 CH',
+      created_at: 'Thứ Bảy, 12:40 CH',
+      updated_at: 'Thứ Bảy, 12:40 CH',
+      status: 'draft',
       user: {
-
          username: 'caoquocan',
          fullname: 'Cao Quốc Ân',
          avatar: '',
@@ -18,7 +18,6 @@ export const posts = [
          followers_count: 0,
          posts_count: 0,
          questions_count: 0,
-
       },
       isSolved: true,
       tags: [
@@ -39,9 +38,10 @@ export const posts = [
       points: 4,
       bookmarks_count: 0,
       comments_count: 0,
-      publishedAt: '10 tháng 2 năm 2022',
-      created_at: '',
-      updated_at: '',
+      publishedAt: 'Thứ Bảy, 12:40 CH',
+      created_at: 'Thứ Bảy, 12:40 CH',
+      updated_at: 'Thứ Bảy, 12:40 CH',
+      status: 'public',
       user: {
          username: 'caoquocan',
          fullname: 'Cao Quốc Ân',
@@ -69,11 +69,11 @@ export const posts = [
       points: 4,
       bookmarks_count: 0,
       comments_count: 0,
-      publishedAt: '10 tháng 2 năm 2022',
-      created_at: '',
-      updated_at: '',
+      publishedAt: 'Thứ Bảy, 12:40 CH',
+      created_at: 'Thứ Bảy, 12:40 CH',
+      updated_at: 'Thứ Bảy, 12:40 CH',
+      status: 'public',
       user: {
-
          username: 'caoquocan',
          fullname: 'Cao Quốc Ân',
          avatar: '',
@@ -81,7 +81,6 @@ export const posts = [
          followers_count: 0,
          posts_count: 0,
          questions_count: 0,
-
       },
       tags: [
          {
@@ -113,11 +112,11 @@ export const singlePost = {
    points: 4,
    bookmarks_count: 0,
    comments_count: 0,
-   publishedAt: '10 tháng 2 năm 2022',
-   created_at: '',
-   updated_at: '',
+   publishedAt: 'Thứ Bảy, 12:40 CH',
+   created_at: 'Thứ Bảy, 12:40 CH',
+   updated_at: 'Thứ Bảy, 12:40 CH',
+   status: 'public',
    user: {
-
       username: 'caoquocan',
       fullname: 'Cao Quốc Ân',
       avatar: '',
@@ -125,17 +124,16 @@ export const singlePost = {
       followers_count: 0,
       posts_count: 0,
       questions_count: 0,
-
    },
    comments: [
       {
-         content: "<p>Lấy ý tưởng từ QEMUBootTester nhìn thấy t",
-         publishedAt: '10 tháng 2 năm 2022',
-         created_at: '',
-         updated_at: '',
+         content: '<p>Lấy ý tưởng từ QEMUBootTester nhìn thấy t',
+         publishedAt: 'Thứ Bảy, 12:40 CH',
+         created_at: 'Thứ Bảy, 12:40 CH',
+         updated_at: 'Thứ Bảy, 12:40 CH',
+         status: 'public',
          isUpvoted: true,
          user: {
-
             username: 'caoquocan',
             fullname: 'Cao Quốc Ân',
             avatar: '',
@@ -143,16 +141,15 @@ export const singlePost = {
             followers_count: 0,
             posts_count: 0,
             questions_count: 0,
-
          },
          replies: [
             {
-               content: "<p>Lấy ý tưởng từ QEMUBootTester nhìn thấy t",
-               publishedAt: '10 tháng 2 năm 2022',
-               created_at: '',
-               updated_at: '',
+               content: '<p>Lấy ý tưởng từ QEMUBootTester nhìn thấy t',
+               publishedAt: 'Thứ Bảy, 12:40 CH',
+               created_at: 'Thứ Bảy, 12:40 CH',
+               updated_at: 'Thứ Bảy, 12:40 CH',
+               status: 'public',
                user: {
-
                   username: 'caoquocan',
                   fullname: 'Cao Quốc Ân',
                   avatar: '',
@@ -160,17 +157,16 @@ export const singlePost = {
                   followers_count: 0,
                   posts_count: 0,
                   questions_count: 0,
-
-               }
+               },
             },
             {
-               content: "<p>Lấy ý tưởng từ QEMUBootTester nhìn thấy t",
-               publishedAt: '10 tháng 2 năm 2022',
-               created_at: '',
-               updated_at: '',
+               content: '<p>Lấy ý tưởng từ QEMUBootTester nhìn thấy t',
+               publishedAt: 'Thứ Bảy, 12:40 CH',
+               created_at: 'Thứ Bảy, 12:40 CH',
+               updated_at: 'Thứ Bảy, 12:40 CH',
+               status: 'public',
                isUpvoted: true,
                user: {
-
                   username: 'caoquocan',
                   fullname: 'Cao Quốc Ân',
                   avatar: '',
@@ -178,12 +174,11 @@ export const singlePost = {
                   followers_count: 0,
                   posts_count: 0,
                   questions_count: 0,
-
-               }
-            }
-         ]
-      }
-   ]
+               },
+            },
+         ],
+      },
+   ],
 };
 
 export const singleQuestion = {
@@ -206,11 +201,11 @@ export const singleQuestion = {
    isDownvoted: false,
    bookmarks: 0,
    replies: 0,
-   publishedAt: '10 tháng 2 năm 2022',
-   created_at: '',
-   updated_at: '',
+   publishedAt: 'Thứ Bảy, 12:40 CH',
+   created_at: 'Thứ Bảy, 12:40 CH',
+   updated_at: 'Thứ Bảy, 12:40 CH',
+   status: 'public',
    user: {
-
       username: 'caoquocan',
       fullname: 'Cao Quốc Ân',
       avatar: '',
@@ -218,7 +213,6 @@ export const singleQuestion = {
       followers_count: 0,
       posts_count: 0,
       questions_count: 0,
-
    },
 };
 
@@ -242,11 +236,11 @@ export const singleSeries = {
    isDownvoted: false,
    bookmarks: 0,
    comments: 0,
-   publishedAt: '10 tháng 2 năm 2022',
-   created_at: '',
-   updated_at: '',
+   publishedAt: 'Thứ Bảy, 12:40 CH',
+   created_at: 'Thứ Bảy, 12:40 CH',
+   updated_at: 'Thứ Bảy, 12:40 CH',
+   status: 'public',
    user: {
-
       username: 'caoquocan',
       fullname: 'Cao Quốc Ân',
       avatar: '',
@@ -254,6 +248,5 @@ export const singleSeries = {
       followers_count: 0,
       posts_count: 0,
       questions_count: 0,
-
    },
 };

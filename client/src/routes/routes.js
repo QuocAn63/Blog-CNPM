@@ -20,6 +20,7 @@ import ProfilePage from '~/pages/Profile';
 import PostManagementPage from '~/pages/PostManagement';
 import SearchPage from '~/pages/Search';
 import NotificationsPage from '~/pages/Notifications';
+import MeActivitiesPage from '~/pages/MeActivities';
 
 const publicRoutes = [
    {
@@ -116,13 +117,29 @@ const publicRoutes = [
       layout: DefaultSidebarless,
       subPath: [
          {
-            path: 'posts/draft',
+            path: 'posts/drafts',
             component: PostManagementPage,
          },
          {
             path: 'posts/public',
             component: PostManagementPage,
          },
+         {
+            path: 'series',
+            component: PostManagementPage,
+         },
+         {
+            path: 'bookmarks/posts',
+            component: PostManagementPage,
+         },
+         {
+            path: 'bookmarks/series',
+            component: PostManagementPage,
+         },
+         {
+            path: 'violations',
+            component: PostManagementPage,
+         }
       ],
    },
    {
@@ -133,6 +150,11 @@ const publicRoutes = [
    {
       path: config.routes.notifications,
       component: NotificationsPage,
+      layout: DefaultSidebarless,
+   },
+   {
+      path: config.routes.activities,
+      component: MeActivitiesPage,
       layout: DefaultSidebarless,
    },
 ];

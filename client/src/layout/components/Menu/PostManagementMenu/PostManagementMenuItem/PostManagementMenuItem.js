@@ -3,7 +3,7 @@ import styles from './PostManagementMenuItem.module.scss';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
@@ -16,14 +16,14 @@ function PostManagementMenuItem({ title, icon, count = 0, parent, href, to, clas
       passProps.href = href;
    }
    if (to) {
-      Comp = Link;
+      Comp = NavLink;
       passProps.to = to;
    }
 
    let classNames = cx('wrapper') + ' ' + className;
 
    return (
-      <Comp className={classNames} {...passProps}>
+      <Comp className={(to ? (nav => (nav.isActive) ? (classNames + " " + cx("active")) : classNames) : classNames)} {...passProps}>
          <FontAwesomeIcon icon={icon} />
          <span className={cx('title')}>
             {title} ({count})

@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 
-function FormInput({ label, rightLabel, leftLabel, bold, outline, register, error, ...props }) {
+function FormInput({ label, rightLabel, leftLabel, bold, outline, register, error, ...props }, ref) {
    const inputWrapperClassname = () => {
       let className = 'flex items-center rounded px-3';
       if (outline) {
@@ -22,10 +22,10 @@ function FormInput({ label, rightLabel, leftLabel, bold, outline, register, erro
 
    return (
       register && (
-         <div className="relative w-full">
+         <div className="relative w-full" ref={ref}>
             {label && <span className={labelClassname()}>{label}</span>}
             <div className={inputWrapperClassname()}>
-               {rightLabel && <span className={labelClassname()}>{rightLabel}</span>}
+               {rightLabel && <span className={labelClassname() + " mr-1"}>{rightLabel}</span>}
                <input {...register(props.name)} className="w-full outline-none border-none h-10 text-sm" {...props} />
                {leftLabel && <span className={labelClassname()}>{leftLabel}</span>}
             </div>
@@ -37,4 +37,4 @@ function FormInput({ label, rightLabel, leftLabel, bold, outline, register, erro
    );
 }
 
-export default FormInput;
+export default forwardRef(FormInput);

@@ -211,7 +211,7 @@ const PostManagementMenu = [{
       {
          title: "Bản nháp",
          icon: faLock,
-         to: "/me/posts/draft"
+         to: "/me/posts/drafts"
       },
       {
          title: "Công khai",

@@ -39,12 +39,12 @@ function Header() {
          {
             title: 'Quản lý nội dung',
             icon: faFileLines,
-            path: '/me',
+            path: '/me/posts/drafts',
          },
          {
             title: "Lịch sử hoạt động",
             icon: faHistory,
-            path: '/history'
+            path: '/activities'
          },
 
       ];
@@ -110,13 +110,13 @@ function Header() {
                         (<Wrapper>
                            <ul>
                               <li>
-                                 <Link to="/pulish/post" className="block text-sm text-gray-600 px-3 py-2 hover:text-sky-600">
+                                 <Link to="/publish/post" className="block text-sm text-gray-600 px-3 py-2 hover:text-sky-600">
                                     <FontAwesomeIcon icon={faPen} className="mr-2" />
                                     Viết bài
                                  </Link>
                               </li>
                               <li>
-                                 <Link to="/pulish/series" className="block text-sm text-gray-600 px-3 py-2 hover:text-sky-600">
+                                 <Link to="/publish/series" className="block text-sm text-gray-600 px-3 py-2 hover:text-sky-600">
                                     <FontAwesomeIcon icon={faListUl} className="mr-2" />
                                     Tạo series mới
                                  </Link>

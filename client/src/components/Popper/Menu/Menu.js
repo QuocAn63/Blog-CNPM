@@ -13,7 +13,7 @@ import Header from './Header';
 
 const cx = classNames.bind(styles);
 
-function Menu({ children, items = [], hideOnClick = false, onChange = () => { } }) {
+function Menu({ children, items = [], onChange = () => { } }) {
     const [history, setHistory] = useState([{ data: items }]);
     const current = history[history.length - 1];
 
@@ -61,11 +61,10 @@ function Menu({ children, items = [], hideOnClick = false, onChange = () => { } 
 
     return (
         <Tippy
-            delay={[0, 750]}
-            offset={[16, 8]}
+            trigger="click"
             placement="bottom-end"
-            hideOnClick={hideOnClick}
             interactive
+            hideOnClick={true}
             onHide={handleResetMenu}
             render={renderResult}
         >
@@ -77,7 +76,7 @@ function Menu({ children, items = [], hideOnClick = false, onChange = () => { } 
 Menu.prototype = {
     children: PropTypes.node.isRequired,
     items: PropTypes.array.isRequired,
-    hideOnClick: PropTypes.bool,
+    hideonclick: PropTypes.bool,
     onChange: PropTypes.func,
 }
 

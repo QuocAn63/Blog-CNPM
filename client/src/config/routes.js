@@ -12,7 +12,8 @@ const routes = {
    login: '/login',
    register: '/register',
    me: "/me",
-   notifications: "/notifications"
+   notifications: "/notifications",
+   activities: "/activities",
 };
 
 export default routes;
